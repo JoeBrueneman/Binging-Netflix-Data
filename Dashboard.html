@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Data Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Netflix Data Dashboard</h1>
+        <p>Explore interactive visualizations of Netflix viewing data</p>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Select a Dataset:</h5>
+                <select id="selDataset" class="form-control"></select>
+            </div>
+            <div class="col-md-9">
+                <div id="sample-metadata" class="metadata-panel"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="bar"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="bubble"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</body>
+</html>

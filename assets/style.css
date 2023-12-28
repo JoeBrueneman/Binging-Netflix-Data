@@ -1,0 +1,27 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.jumbotron {
+    background-color: #222;
+    color: white;
+    margin-bottom: 30px;
+    padding: 100px 25px;
+}
+
+.container-fluid {
+    padding: 15px 50px;
+}
+
+.metadata-panel {
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    height: 150px;
+    overflow-y: auto;
+}
+
+#bar, #bubble {
+    margin-top: 20px;
+}
