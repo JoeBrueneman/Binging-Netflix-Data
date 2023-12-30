@@ -28,16 +28,6 @@
 
       <ul class="nav_list">
         <li>
-          <a href="#">
-            <i class="material-icons">
-              groups_2
-            </i>
-            <span class="links_name">Team Members</span>
-          </a>
-            <span class="tooltip">Team Members</span> 
-        </li>
-
-        <li>
           <a href="Dashboard.html">
             <i class="material-icons">
               dashboard
@@ -45,6 +35,16 @@
             <span class="links_name">Dashboard</span>
           </a>
             <span class="tooltip">Dashboard</span> 
+        </li>
+
+        <li>
+          <a href="team.html">
+            <i class="material-icons">
+              groups_2
+            </i>
+            <span class="links_name">Team Members</span>
+          </a>
+            <span class="tooltip">Team Members</span> 
         </li>
 
         <li>
@@ -75,20 +75,14 @@
       </div>
     </div>
 
-    <div class="home_content">
-      <div class="text">
-        Find Out The Most Watched TV Shows
+    <div class="showcase">
+      <div class="showcase-top">
       </div>
+  
     </div>
 
-    <script>
-      let btn = document.querySelector("#btn");
-      let sidebar = document.querySelector(".sidebar");
-      
-      btn.onclick = function() {
-        sidebar.classList.toggle("active");
-      }
-    </script>
+    <script src="logic.js"></script>
+
 </body>
 
 </html>
