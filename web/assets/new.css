@@ -123,7 +123,7 @@ header .navbar ul li a{
 }
 
 header .navbar ul li a:hover{
-    background: var(--red);
+    background: #83101072;
 }
 
 #menu{
@@ -159,7 +159,7 @@ header .navbar ul li a:hover{
     height: 100%;
     z-index: 0;
     background: rgba(58, 57, 57, 0.6);
-    box-shadow: inset 50px 100px 50px #000000;
+    box-shadow: inset 50px 100px 50px #00000000;
 }
 
 .Dashboard .Dashboard-container {
@@ -176,17 +176,26 @@ header .navbar ul li a:hover{
 
 .Dashboard h1{
     font-size: 5rem;
+    text-transform: uppercase;
     color: #fff;
 }
 
 .Dashboard h1 span{
+    text-transform: uppercase;
     color: var(--red);
 }
 
 .Dashboard p{
     font-size: 2rem;
+    text-transform: uppercase;
     color: #fff;
     padding: 1rem 0;
+}
+
+.Dashboard .btn {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
 }
 
 .Team{
@@ -371,6 +380,13 @@ header .navbar ul li a:hover{
 
 
 
+
+
+
+
+
+
+
 /* media queries */
 
 @media (max-width:1200px){
@@ -423,5 +439,14 @@ header .navbar ul li a:hover{
 @media (max-width:400px){
     header{
         width: 100vw;
+
+    .Dashboard{
+        margin:0.3rem;
+        width: min-content;
+    }
+
+    .Dashboard-container{
+        width: 100%;
+    }
     }
 }
