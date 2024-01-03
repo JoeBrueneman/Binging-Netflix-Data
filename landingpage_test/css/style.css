@@ -123,17 +123,31 @@ img {
     justify-content: center;
     text-align: center;
 }
- /* red border for each tab at the bottom */
+
+/* red border for each tab at the bottom */
 .tab-border {
     border-bottom: var(--primary-color) 4px solid;
 }
-/* Tab Content */
 
+/* Tab Content */
 .tab-content {
     padding: 3rem 0;
     background: #000;
     color: #fff;
 }
+
+/* Hide Content Initially */
+#tab-1-content,
+#tab-2-content,
+#tab-3-content {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+
+
 /* layout of tab content */
 #tab-1-content .tab-1-content-inner {
     /* creating a grid */
@@ -145,9 +159,24 @@ img {
     align-items: center;
     justify-content: center;
 }
+/* layout of tab-2 text */
+#tab-2-content .tab-2-content-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
 
-
-
+#tab-2-content .tab-2-content-bottom {
+    margin-top:2rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 /* font for the tabs text */
 .tabs p {
     font-size: 1.2rem;
@@ -165,7 +194,55 @@ img {
     cursor: pointer;
 }
 
+/* Table */
+.table {
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.table thead th {
+    text-transform: uppercase;
+    padding: 0.8rem;
+}
 
+.table tbody tr td {
+    color: #999;
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+}
+/* title column alignment to left */
+.table tbody tr td:nth-child(2) {
+    text-align: left;
+}
+.table tbody tr:nth-child(odd) {
+    background: #222;
+}
+
+/* Footer */
+.footer {
+    max-width: 75%;
+    margin: 1rem auto;
+    overflow: auto;
+}
+
+.footer, .footer a {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin-bottom: 1.5rem;
+}
+.footer .footer-cols {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2rem;
+}
+
+.footer li {
+    line-height: 1.9;
+}
 /* Containers */
 .container {
     /* percentage of the screen */
@@ -185,6 +262,10 @@ img {
 }
 .text-lg {
     font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.text-md {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 .text-center {
@@ -229,4 +310,42 @@ img {
     font-size: 1rem;
     padding: 0.8rem 1.3rem;
     text-transform: uppercase;
+}
+
+@media(max-width: 960px) {
+    .showcase {
+        height:70vh;
+    }
+
+    .hide-sm {
+        display: none;
+    }
+    .showcase-top img{
+        top: 30%;
+        left: 5%;
+        transform: translate(0);
+    }
+
+    .showcase-content h1 {
+        font-size: 3.7rem;
+        line-height: 1;
+    }
+
+    .showcase-content p {
+        font-size: 1.5rem;
+    }
+
+    .btn-xl {
+        font-size: 1.5rem;
+        padding: 1.4rem 2rem;
+    }
+    .text-xl {
+        font-size: 1.5rem;
+    }
+    .text-lg {
+        font-size: 1.3rem;
+    }
+    .text-md {
+        font-size: 1rem;
+    }
 }
