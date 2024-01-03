@@ -117,7 +117,7 @@ img {
 
 .tabs .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
     align-items: center;
     justify-content: center;
@@ -139,7 +139,8 @@ img {
 /* Hide Content Initially */
 #tab-1-content,
 #tab-2-content,
-#tab-3-content {
+#tab-3-content,
+#tab-4-content {
     display: none;
 }
 
@@ -195,18 +196,18 @@ img {
 }
 
 /* Table */
-.table {
+.table, .table-list {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     border-collapse: collapse;
     border-spacing: 0;
 }
-.table thead th {
+.table thead th, .table-list thead th {
     text-transform: uppercase;
     padding: 0.8rem;
 }
 
-.table tbody tr td {
+.table tbody tr td, .table-list tbody tr td {
     color: #999;
     padding: 0.8rem 1.2rem;
     text-align: center;
@@ -215,10 +216,14 @@ img {
 .table tbody tr td:nth-child(2) {
     text-align: left;
 }
-.table tbody tr:nth-child(odd) {
+.table tbody tr:nth-child(odd), .table-list tbody tr:nth-child(odd) {
     background: #222;
 }
 
+.table-title {
+    padding: 2rem 1.2rem;
+    text-align: left;
+}
 /* Footer */
 .footer {
     max-width: 75%;
@@ -232,11 +237,12 @@ img {
 }
 
 .footer p {
+    text-align: center;
     margin-bottom: 1.5rem;
 }
 .footer .footer-cols {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-gap: 2rem;
 }
 
@@ -276,7 +282,7 @@ img {
 }
 
 /* Buttons */
- .btn {
+ .btn, .btn-list {
     display: inline-block;
     background: var(--primary-color);
     color: #fff;
@@ -311,6 +317,8 @@ img {
     padding: 0.8rem 1.3rem;
     text-transform: uppercase;
 }
+
+
 
 @media(max-width: 960px) {
     .showcase {

@@ -22,3 +22,19 @@ function removeShow() {
 
 //Listen for tab click
 tabItems.forEach(item => item.addEventListener('click', selectItem))
+
+
+
+//Recommendation List
+const buttonListTables = document.querySelectorAll('.table-list');
+//select table content
+function selectTable(e) {
+    removeTable();
+    //grab table from DOM
+    const buttonListTable = document.querySelector(`#${this.id}`);
+    //add table class
+    buttonListTable.classList.add('show');
+}
+function removeTable() {
+    listContentTabless.forEach(item => item.classList.remove('show'))
+}
