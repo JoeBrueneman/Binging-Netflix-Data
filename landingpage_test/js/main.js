@@ -25,7 +25,7 @@ tabItems.forEach(item => item.addEventListener('click', selectItem))
 
 
 
-//Recommendation List
+//Recommendation Table
 const buttonItems = document.querySelectorAll('.btn-list')
 const buttonListTables = document.querySelectorAll('.table-list');
 //select table content
@@ -41,3 +41,22 @@ function removeTable() {
 }
 //listen for button click
 buttonItems.forEach(item => item.addEventListener('click', selectTable))
+
+
+
+//Top-10 Table
+const buttonTopItems = document.querySelectorAll('.btn-top')
+const buttonTopTables = document.querySelectorAll('.table-top');
+//select table content
+function selectTopTable(e) {
+    removeTopTable();
+    //grab table from DOM
+    const buttonTopTable = document.querySelector(`#${this.id}-table`);
+    //add table class
+    buttonTopTable.classList.add('show-table');
+}
+function removeTopTable() {
+    buttonTopTables.forEach(item => item.classList.remove('show-table'))
+}
+//listen for button click
+buttonTopItems.forEach(item => item.addEventListener('click', selectTopTable))

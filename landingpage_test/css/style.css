@@ -160,6 +160,8 @@ img {
     align-items: center;
     justify-content: center;
 }
+
+
 /* layout of tab-2 text */
 #tab-2-content .tab-2-content-top {
     display: grid;
@@ -196,7 +198,7 @@ img {
 }
 
 /* Table */
-.table, .table-list {
+.table, .table-list, .table-top {
     width: 100%;
     margin-top: 1.5rem;
     border-collapse: collapse;
@@ -207,7 +209,7 @@ img {
     padding: 0.8rem;
 }
 
-.table tbody tr td, .table-list tbody tr td {
+.table tbody tr td, .table-list tbody tr td, .table-top tbody tr td {
     color: #999;
     padding: 0.8rem 1.2rem;
     text-align: center;
@@ -216,15 +218,22 @@ img {
 .table tbody tr td:nth-child(2) {
     text-align: left;
 }
-.table tbody tr:nth-child(odd), .table-list tbody tr:nth-child(odd) {
+.table tbody tr:nth-child(odd), .table-list tbody tr:nth-child(odd), .table-top tbody tr:nth-child(odd) {
     background: #222;
 }
 
 .table-title {
     font-size:2rem;
     font-weight: bold;
-    margin-top: 10rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
     text-align: left;
+}
+
+/* Hide top-table Initially */
+#movies-top-10-table,
+#series-top-10-table {
+    display: none;
 }
 
 /* Hide list-table Initially */
@@ -235,6 +244,9 @@ img {
 #table-minh {
     display: none;
 }
+
+
+
 /* Show table after click */
 .show-table {
     display: table !important;
@@ -299,7 +311,7 @@ img {
 }
 
 /* Buttons */
- .btn {
+ .btn, .btn-top {
     display: inline-block;
     background: var(--primary-color);
     color: #fff;
@@ -314,11 +326,11 @@ img {
     border-radius: 2px;
  }
 
-.btn:hover {
+.btn:hover, .btn-top:hover {
     opacity: 0.9;
 }
 
-.btn-rounded {
+.btn-rounded, .btn-top {
     border-radius: 5px;
     padding: 0.5rem 1rem;
 }
