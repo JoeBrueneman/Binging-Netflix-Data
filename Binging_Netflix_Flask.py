@@ -24,7 +24,7 @@ def hello_world():
 
 @app.route('/data')
 def return_data():
-    results = engine.execute('select * from Netflix_Data').all()
+    results = engine.execute('select * from netflix_data').all()
     data=[]
     for each_result in results:
         data.append(list(each_result))
