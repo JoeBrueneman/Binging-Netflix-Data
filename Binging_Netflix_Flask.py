@@ -14,7 +14,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-engine = create_engine("sqlite:///Resources/db_browser.sqlite")
+engine = create_engine("sqlite:///Resources/netflix_data_db.sqlite")
 
 
 @app.route('/')
@@ -24,7 +24,7 @@ def hello_world():
 
 @app.route('/data')
 def return_data():
-    results = engine.execute('select * from Netflix_Test_Data').all()
+    results = engine.execute('select * from Netflix_Data').all()
     data=[]
     for each_result in results:
         data.append(list(each_result))
