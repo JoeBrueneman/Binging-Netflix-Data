@@ -26,15 +26,18 @@ tabItems.forEach(item => item.addEventListener('click', selectItem))
 
 
 //Recommendation List
+const buttonItems = document.querySelectorAll('.btn-list')
 const buttonListTables = document.querySelectorAll('.table-list');
 //select table content
 function selectTable(e) {
     removeTable();
     //grab table from DOM
-    const buttonListTable = document.querySelector(`#${this.id}`);
+    const buttonListTable = document.querySelector(`#table-${this.id}`);
     //add table class
-    buttonListTable.classList.add('show');
+    buttonListTable.classList.add('show-table');
 }
 function removeTable() {
-    listContentTabless.forEach(item => item.classList.remove('show'))
+    buttonListTables.forEach(item => item.classList.remove('show-table'))
 }
+//listen for button click
+buttonItems.forEach(item => item.addEventListener('click', selectTable))
