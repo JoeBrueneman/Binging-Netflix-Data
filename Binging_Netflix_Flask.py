@@ -9,7 +9,7 @@ from sqlalchemy import create_engine, func
 import datetime as dt
 import psycopg2
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 
 
 
@@ -20,8 +20,8 @@ engine = create_engine("sqlite:///Resources/netflix_data_db.sqlite")
 
 
 @app.route('/')
-def hello_world():
-    return "<p>Hello, World!</p>"
+def home():
+    return app.send_static_file('index.html')
 
 
 @app.route('/data')
