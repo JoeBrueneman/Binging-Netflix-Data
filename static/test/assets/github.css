@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: grey;
+    color: #fff;
+}
+
+.container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.disc{
+    background-color: rgb(209, 26, 35);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    background-color: rgb(209, 26, 35);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+p{
+    width: 75%;
+    text-align: center;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+.link-to-web-container {
+    text-align: center; 
+  }
+  
+  .btn.link-to-web {
+    background-color: rgb(209, 26, 35);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px; 
+    cursor: pointer;
+    display: inline-flex; 
+    align-items: center; 
+    border-radius: 4px; 
+  }
+  
+  .btn.link-to-web .material-icons {
+    margin-right: 8px; 
+  }
+  
+
+@media only screen and (max-width:600px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .disc{
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .hero{
+        width: 100vw;
+        height: 50vh;
+    }
+}
