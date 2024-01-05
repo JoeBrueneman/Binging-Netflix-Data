@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/69fddada70.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="shortcut icon" href="img/circlecropped.png" type="image/croppedlogo">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="static/img/circlecropped.png" type="image/croppedlogo">
+    <link rel="stylesheet" href="static/css/style.css">
     <title>Binging Netflix Data - What's your next favorite show </title>
+    <!-- D3 library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
      <!-- Hamburger Menu Icon -->
@@ -29,7 +31,7 @@
 
     <header class="showcase" id="showcase">
         <div class="showcase-top">
-            <img src="img/logo.png" alt="Netflix">
+            <img src="static/img/logo.png" alt="Netflix">
             <!-- <a href="#" class="btn btn-rounded">Go To Team</a> -->
         </div>
         <div class="showcase-content">
@@ -184,7 +186,7 @@
                 </div>
                 <div class="tab-2-content-bottom">
                     <div>
-                        <img src="img/tab-content-2-1.png" alt="">
+                        <img src="static/img/tab-content-2-1.png" alt="">
                         <p class="text-md">Subscribers Growth</p>
                         <p class="text-dark">
                             description of graph 2-1
@@ -192,7 +194,7 @@
                     </div>
 
                     <div>
-                        <img src="img/tab-content-2-2.png" alt="">
+                        <img src="static/img/tab-content-2-2.png" alt="">
                         <p class="text-md">Countries</p>
                         <p class="text-dark">
                             description of graph 2-2
@@ -200,7 +202,7 @@
                     </div>
 
                     <div>
-                        <img src="img/tab-content-2-3.png" alt="">
+                        <img src="static/img/tab-content-2-3.png" alt="">
                         <p class="text-md">Price per Share Growth</p>
                         <p class="text-dark">
                             description of graph 2-3
@@ -526,32 +528,38 @@
     <!-- Statistics Section ends-->
 
     <!-- Analytics section starts-->
-
-    <section class="Analytics" id="Analytics"></section>
+    <!-- Header of the page -->
+    <section class="analytics" id="analytics"></section>
+    <div class="analytics-header">
         <div class="jumbotron text-center">
             <h1>Netflix Data Dashboard</h1>
             <p>Explore interactive visualizations of Netflix viewing data</p>
         </div>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3">
-                    <h5>Select a Dataset:</h5>
-                    <select id="selDataset" class="form-control"></select>
-                </div>
-                <div class="col-md-9">
-                    <div id="sample-metadata" class="metadata-panel"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="bar"></div>
-                </div>
-                <div class="col-md-6">
-                    <div id="bubble"></div>
-                </div>
-            </div>
+    </div>
+    <!-- Information Box for Each Title -->
+    <div class="analytics-body">
+        <div class="grid-container-infobox">
+            <div id="infobox-header" class="item1">CHOOSE A TITLE</div>
+            <select id="selDataset" class="item2" onchange="optionChanged(this.value)"></select>
+            <div id="infobox-menu" class="item3"><h3></h3></div>
+            <div id="infobox-main" class="item4"><h3></h3></div>
         </div>
+        <div class="grid-container-gauge">
+            <div id="gauge"></div>
+        </div>
+        <div class="grid-container-bar-top">
+            <div id="bar-top"></div>
+        </div>
+        <div class="grid-container-bubble">
+            <div id="bubble"></div>
+        </div>
+        <div class="grid-container-bar">
+            <div id="bar"></div>
+        </div>
+
+
+    </div>
+                
 
     <!-- Analytics section ends-->
 
@@ -566,7 +574,7 @@
                 <button class="btn"><span>Joe</span></button>
                 <button class="btn"><span>Julia</span></button>
                 <button class="btn"><span>Minh</span></button>
-                <button class="addIcon"><i class="fas fa-plus-circle"></i> <span>Add Profile</span></button>
+                <button class="addIcon"><i class="fa-sharp fa-solid fa-circle-plus"></i><span>Add Profile</span></button>
             </div>
             <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git" target="_blank" class="detailProfileLink">
                 <button class="detailProfile">detail Profile</button>
@@ -605,6 +613,8 @@
     </footer>
 <!-- Footer Ends -->
 
-    <script src="js/main.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </body>
 </html>

@@ -275,19 +275,19 @@ img {
     background-size: cover;
 }
 .memberList .btn-list:nth-child(1) {
-    background-image: url(/img/Brandon.png);
+    background-image: url(../img/Brandon.png);
 }
 .memberList .btn-list:nth-child(2) {
-    background-image: url(/img/Gia.png);
+    background-image: url(../img/Gia.png);
 }
 .memberList .btn-list:nth-child(3) {
-    background-image: url(/img/Joe.png);
+    background-image: url(../img/Joe.png);
 }
 .memberList .btn-list:nth-child(4) {
-    background-image: url(/img/Julia.png);
+    background-image: url(../img/Julia.png);
 }
 .memberList .btn-list:nth-child(5) {
-    background-image: url(/img/Minh.png);
+    background-image: url(../img/Minh.png);
 }
 .memberList .btn-list:hover{
     box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.9);
@@ -331,6 +331,40 @@ body {
 #bar, #bubble {
     margin-top: 20px;
 }
+
+.item1 { 
+    grid-area: header;
+    color:#fff;
+    font-size: 15px;
+    font-weight: 20px;
+ }
+.item2 { 
+    grid-area: selectbar; 
+    
+}
+.item3 { 
+    grid-area: menu; 
+    font-family: Arial;
+}
+.item4 { grid-area: main; }
+.grid-container-infobox {
+    display: inline-grid;
+    grid-template-areas: 
+        'header header'
+        'selectbar selectbar'
+        'menu main';
+    /* gap: 5px; */
+    background-color: #999;
+    /* padding: 5px; */
+    width: 15px;
+}
+.grid-container-infobox > div {
+    background-color: #000;
+    text-align: left;
+    padding: 3px 3px;
+    font-size: 15px;
+  }
+
 
 
 /* Team */
@@ -387,23 +421,23 @@ body {
 }
 
 .memberDiv .btn:nth-child(1){
-    background-image: url(/web/img/Brandon.png);
+    background-image: url(/static/img/Brandon.png);
 }
 
 .memberDiv .btn:nth-child(2){
-    background-image: url(/web/img/Gia.png);
+    background-image: url(/static/img/Gia.png);
 }
 
 .memberDiv .btn:nth-child(3){
-    background-image: url(/web/img/Joe.png);
+    background-image: url(/static/img/Joe.png);
 }
 
 .memberDiv .btn:nth-child(4){
-    background-image: url(/web/img/Julia.png);
+    background-image: url(/static/img/Julia.png);
 }
 
 .memberDiv .btn:nth-child(5){
-    background-image: url(/web/img/Minh.png);
+    background-image: url(/static/img/Minh.png);
 }
 
 .memberDiv .btn:hover{
