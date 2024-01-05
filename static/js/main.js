@@ -1,8 +1,15 @@
+const url = 'data';
+d3.json(url).then(function(data) {
+    console.log(data);
+  });
+
+
 // Select DOM items
 const tabItems = document.querySelectorAll('.tab-item');
 const tabContentItems = document.querySelectorAll('.tab-content-item');
 const hamburger = document.querySelector('.hamburger-menu');
 const sidebar = document.querySelector('.sidebar');
+
 
 // Functions for tab items
 function selectItem(e) {
