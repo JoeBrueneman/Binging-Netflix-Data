@@ -76,15 +76,16 @@ function removeTable() {
 //listen for button click
 buttonItems.forEach(item => item.addEventListener('click', selectTable))
 
-//----------------------------------------Analytics Section-------------
+//----------------------------------------Analytics Section------------------------------------------
 const url = 'data';
 d3.json(url).then(function(data) {
     console.log(data);
     console.log(data.map(d=>d[0]));
     console.log(data.map(d=>d[1]));
+    
   });
 
-// Create function for the demographic info box
+// TITLE INFO-BOX : Create function for the title info box
 function infoBox(sample){
     d3.json(url).then(function(data){
         // Assign all titles data to titleData
@@ -108,7 +109,7 @@ function infoBox(sample){
     });
 };  
 
-// Create function for gauge chart 
+// IMDB RATING GAUGE CHART : Create function for gauge chart 
 function gaugeChart(sample){
     d3.json(url).then(function(data){
         // Assign all titles data to titleData
@@ -164,27 +165,37 @@ function gaugeChart(sample){
     });
 };
 
-//Ploting bar chart for top 10 movies and series
+//TOP 10 MOVIE/SERIES BAR GRAPH : Ploting bar chart for top 10 movies and series
 //Create function for bar chart of top 10 Movies with viewed hours
-function barChart(sample){
+function bartopChart(sample){
     d3.json(url).then(function(data){
         // title names for y-axis
         let titleData = data.map(d=>d[0]);
         // viewed hours for x-axis
         let viewedHours = data.map(d=>d[1]);
-        // // Find the array of matching sample title to titles data
-        // let titleSampleMatch = titleData.filter(match => match == sample);
-        // // Access the rest of the data within the array
-        // let titleIndex = titleData.findIndex(x =>x==titleSampleMatch)
-        // let titleSampleData = data[titleIndex];
-        // Asign values to title_name, title_labels, viewed_hours
-        // let title_name = titleSampleData[0];
-        // let title_labels = titleSampleData[0];
-        // let viewed_hours = titleSampleData[1];
+
+        // Find the array of matching sample title to titles data
+        let titleSampleMatch = titleData.filter(match => match == sample);
+        // Access the rest of the data within the array
+        let titleIndex = titleData.findIndex(x =>x==titleSampleMatch)
+        let titleSampleData = data[titleIndex];
+        let category = titleSampleData[8]
+        //filter out the matching data to this category
+
+        let categoryMatch = data.filter(match => match == category)
+        let title_name = categoryMatch.map(d=>d[1]);
+        let title_labels = categoryMatch.map(d=>d[1]);
+        let viewed_hours = categoryMatch.map(d=>d[2]);
+
+        let yTicks = title_name.slice(0,11);
+        let xValues = viewed_hours.slice(0,11);
+        let textLabels = title_labels.slice(0,11);
+
+
         // Slice the first 10 (happens to be the top 10) titles for display
-        let yTicks = titleData.slice(0,10);
-        let xValues = viewedHours.slice(0,10);
-        let textLabels = titleData.slice(0,10);
+        // let yTicks = titleData.slice(0,11);
+        // let xValues = viewedHours.slice(0,11);
+        // let textLabels = titleData.slice(0,11);
         
         // Set up bar chart
         let barChart = {
@@ -196,7 +207,81 @@ function barChart(sample){
         };
         // Set up the layout
         let layout = {
-            title: "Top 10 Titles"
+            title: "Top 10 Titles",
+            plot_bgcolor:"black",
+            paper_bgcolor:"black"
+        };
+        // Plot the bar chart
+        Plotly.newPlot("bar-top",[barChart],layout)
+    });
+};
+
+// BUBBLE CHART : Create function for the bubble chart: ratings vs. viewed hours
+function bubbleChart(sample){
+    d3.json(url).then(function(data){
+       // ratings for y-axis
+       let ratings_bubble = data.map(d=>d[13]);
+       // viewed hours for x-axis
+       let viewedHours = data.map(d=>d[1]);
+                
+        // Set up the bubble chart
+        let bubbleChart = {
+            x: viewedHours,
+            y: ratings_bubble,
+            mode: "markers",
+            marker:{
+                size: ratings_bubble,
+                color: ratings_bubble,
+                colorscale: "earth"
+            },
+            // text: otu_labels
+        };
+        // Set up the layout
+        let layout = {
+            title: {text:"Ratings vs. Viewed Hours",
+                    font: {
+                        size: 20,
+                        color:"white"
+                    }
+                },
+            hovermode: "closest",
+            xaxis: {title: "Viewed Hours", color:"white"},
+            yaxis: {title: "IMDb Ratings", color:"white"},
+            plot_bgcolor:"black",
+            paper_bgcolor:"black"
+        };
+        // Plot the bubble chart
+        Plotly.newPlot("bubble", [bubbleChart],layout)
+    });
+
+};
+
+// BAR CHART : Create function for bar chart: genre vs. viewed hours
+function barChart(sample){
+    d3.json(url).then(function(data){
+        // genre names for y-axis
+        let genreData = data.map(d=>d[12]);
+        // viewed hours for x-axis
+        let viewedHours = data.map(d=>d[1]);
+        // Set up bar chart
+        let barChart = {
+            x: genreData,
+            y: viewedHours,
+            text: genreData,
+            type:"bar",
+            // orientation: 
+        };
+        // Set up the layout
+        let layout = {
+            title: {
+                text:"Viewed Hours vs. Genre",
+                font:{
+                    size:10,
+                    color:"white"
+                }
+        },
+            plot_bgcolor:"black",
+            paper_bgcolor:"black"
         };
         // Plot the bar chart
         Plotly.newPlot("bar",[barChart],layout)
@@ -218,8 +303,9 @@ function init(){
         infoBox(sample1);
         gaugeChart(sample1);
         // let categoryName = data.map()
+        bartopChart(sample1);
         barChart(data);
-        // bubbleChart(sample0);
+        bubbleChart(data);
     })
 };
 
@@ -230,7 +316,7 @@ function optionChanged(item)
     infoBox(item);
 
     // call the function to build the bar chart
-    barChart(item);
+    bartopChart(item);
 
     // // call the function to build the bubble chart
     // bubbleChart(item);

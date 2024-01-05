@@ -335,7 +335,8 @@ body {
 .item1 { 
     grid-area: header;
     color:#fff;
-    font-size: large;
+    font-size: 15px;
+    font-weight: 20px;
  }
 .item2 { 
     grid-area: selectbar; 
@@ -358,10 +359,10 @@ body {
     width: 15px;
 }
 .grid-container-infobox > div {
-    background-color: #999;
-    text-align: center;
+    background-color: #000;
+    text-align: left;
     padding: 3px 3px;
-    font-size: 10px;
+    font-size: 15px;
   }
 
 
