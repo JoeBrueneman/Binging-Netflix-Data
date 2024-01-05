@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/69fddada70.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
     <title>Binging Netflix Data - What's your next favorite show </title>
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
 </head>
+
 <body>
+<!-- FRONT PAGE -->
     <header class="showcase">
         <div class="showcase-top">
-            <img src="img/logo.png" alt="Netflix">
+            <img src="static/img/logo.png" alt="Netflix">
             <!-- <a href="#" class="btn btn-rounded">Go To Team</a> -->
         </div>
         <div class="showcase-content">
@@ -22,6 +25,7 @@
         </div>
     </header>
 
+<!-- TABS HIGHLIGHTS PAGE -->
     <section class="tabs">
         <div class="container">
             <div id="tab-1" class="tab-item tab-border">
@@ -38,7 +42,7 @@
             </div>
             <div id="tab-4" class="tab-item">
                 <i class="fa-solid fa-heart-circle-plus fa-3x"></i>
-                <p class="hide-sm">Our Recommendations</p>
+                <p class="hide-sm">Recommendations</p>
             </div>
         </div>
     </section>
@@ -48,14 +52,105 @@
             <!-- Tab Content 1 --> 
             <div id="tab-1-content" class="tab-content-item show">
                 <div class="tab-1-content-inner">
-                    <div>
+                    <div class="tab-1-content-left">
                         <p class="text-lg">
                             Top 10 Shows on Netflix
                         </p>
-                        <a href="#" class="btn btn-lg">Movies</a>
-                        <a href="#" class="btn btn-lg">Series</a>
+                        <div class="tab-1-content-button">
+                            <button id="movies-top-10" class="btn-top btn-lg">Movies</a>
+                            <button id="series-top-10" class="btn-top btn-lg">Series</a>
+                        </div>
                     </div>
-                    <img src="img/tab-content-1.png" alt="">
+                    <table id="movies-top-10-table" class="table-top show-table">
+                        <caption class="table-title">Movies</caption>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>The Night Agent</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ginny & Georgia</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>The Glory</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Wednesday</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Queen Charlotte: A Bridgerton Story</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>You</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>La Reina del Sur</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Outer Banks</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>FUBAR</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Manifest</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table id="series-top-10-table" class="table-top">
+                        <caption class="table-title">Series</caption>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>The Night Agent</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ginny & Georgia</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>The Glory</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Wednesday</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Queen Charlotte: A Bridgerton Story</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>You</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>La Reina del Sur</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Outer Banks</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>FUBAR</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Manifest</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <!-- Tab Content 2 -->
@@ -70,7 +165,7 @@
                 </div>
                 <div class="tab-2-content-bottom">
                     <div>
-                        <img src="img/tab-content-2-1.png" alt="">
+                        <img src="static/img/tab-content-2-1.png" alt="">
                         <p class="text-md">Subscribers Growth</p>
                         <p class="text-dark">
                             description of graph 2-1
@@ -78,7 +173,7 @@
                     </div>
 
                     <div>
-                        <img src="img/tab-content-2-2.png" alt="">
+                        <img src="static/img/tab-content-2-2.png" alt="">
                         <p class="text-md">Countries</p>
                         <p class="text-dark">
                             description of graph 2-2
@@ -86,7 +181,7 @@
                     </div>
 
                     <div>
-                        <img src="img/tab-content-2-3.png" alt="">
+                        <img src="static/img/tab-content-2-3.png" alt="">
                         <p class="text-md">Price per Share Growth</p>
                         <p class="text-dark">
                             description of graph 2-3
@@ -182,15 +277,16 @@
                     <p class="text-lg">
                         Our Recommendations
                     </p>
-                    <a href="#table-brandon" class="btn-list btn-lg">Brandon's List</a>
-                    <a href="#table-gia" class="btn-list btn-lg">Gia's List</a>
-                    <a href="#table-joe" class="btn-list btn-lg">Joe's List</a>
-                    <a href="#table-julia" class="btn-list btn-lg">Julia's List</a>
-                    <a href="#table-minh" class="btn-list btn-lg">Minh's List</a>
                 </div>
-                
-                <table id="table-brandon" class="table-list">
-                    <h1 class="table-title">Brandon's List</h1>
+                <div class="memberList">
+                    <button id="brandon" class="btn-list"><span>BRANDON</span></button>
+                    <button id="gia" class="btn-list"><span>GIA</span></button>
+                    <button id="joe" class="btn-list"><span>JOE</span></button>
+                    <button id="julia" class="btn-list"><span>JULIA</span></button>
+                    <button id="minh" class="btn-list"><span>Minh</span></button>
+                </div>   
+                <table id="table-brandon" class="table-list show-table">
+                    <caption class="table-title">Brandon's List</caption>
                     <thead>
                         <tr>
                             <th>Titile</th>
@@ -201,7 +297,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Dark</td>
+                            <td>Lost</td>
                             <td>Science Fiction</td>
                             <td>Series</td>
                             <td>9.0</td>
@@ -233,7 +329,7 @@
                     </tbody>
                 </table>
                 <table id="table-gia" class="table-list">
-                    <h1 class="table-title">Gia's List</h1>
+                    <caption class="table-title">Gia's List</caption>
                     <thead>
                         <tr>
                             <th>Titile</th>
@@ -276,7 +372,7 @@
                     </tbody>
                 </table>
                 <table id="table-joe" class="table-list">
-                    <h1 class="table-title">Joe's List</h1>
+                    <caption class="table-title">Joe's List</caption>
                     <thead>
                         <tr>
                             <th>Titile</th>
@@ -287,7 +383,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Dark</td>
+                            <td>Outer Bank</td>
                             <td>Science Fiction</td>
                             <td>Series</td>
                             <td>9.0</td>
@@ -319,7 +415,7 @@
                     </tbody>
                 </table>
                 <table id="table-julia" class="table-list">
-                    <h1 class="table-title">Julia's List</h1>
+                    <caption class="table-title">Julia's List</caption>
                     <thead>
                         <tr>
                             <th>Titile</th>
@@ -330,7 +426,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Dark</td>
+                            <td>Ginny & Georgia</td>
                             <td>Science Fiction</td>
                             <td>Series</td>
                             <td>9.0</td>
@@ -362,7 +458,7 @@
                     </tbody>
                 </table>
                 <table id="table-minh" class="table-list">
-                    <h1 class="table-title">Minh's List</h1>
+                    <caption class="table-title">Minh's List</caption>
                     <thead>
                         <tr>
                             <th>Titile</th>
@@ -373,7 +469,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Dark</td>
+                            <td>The Night Agent</td>
                             <td>Science Fiction</td>
                             <td>Series</td>
                             <td>9.0</td>
@@ -407,6 +503,16 @@
             </div>
         </div>
     </section>
+<!-- ANALYTICS PAGE -->
+    <section class="analytics">
+
+    </section>
+<!-- TEAM PAGE -->
+    <section class="team">
+
+    </section>
+
+<!-- FOOTER -->
     <footer class="footer">
         <p>Questions?</p>
         <div class="footer-cols">
@@ -425,6 +531,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="/static/js/main.js"></script>
 </body>
 </html>
