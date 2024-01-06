@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#fileContainer {
+    margin-bottom: 20px;
+}
+
+#fileInput {
+    display: none;
+}
+
+label {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+label:hover {
+    background-color: #0056b3;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.chart-heading {
+    text-align: left;
+    margin-left: 10%;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#scatterPlot {
+    width: 80%;
+    height: 500px;
+    margin: 0 auto; /* Center horizontally */
+}
+
+#barChart {
+    width: 80%;
+    height: 650px;
+    margin: 0 auto; /* Center horizontally */
+}
+
+#boxPlot {
+    width: 80%;
+    height: 650px;
+    margin: 0 auto; /* Center horizontally */
+}

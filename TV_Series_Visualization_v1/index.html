@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Series Data</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="fileUtils.js"></script>
+    <script src="dataProcessing.js"></script>
+    <script src="visualization.js"></script>
+</head>
+<body>
+    <div id="content">
+        <h1>TV Series Data Visualization</h1>
+
+        <div id="fileContainer">
+            <label for="fileInput">Choose a CSV file</label>
+            <input type="file" id="fileInput" accept=".csv">
+        </div>
+        
+        <pre id="jsonData"></pre>
+        
+        <h2 class="chart-heading">Ratings vs Voters per View Hour (Scatter Plot)</h2>
+        <div id="scatterPlot"></div>
+        
+        <h2 class="chart-heading">Genres vs View Hour (Bar Chart)</h2>
+        <div id="barChart"></div>
+
+        <h2 class="chart-heading">Genres vs Rating (Box Plot)</h2>
+        <div id="boxPlot"></div>
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', handleFile);
+
+        function handleFile(event) {
+            const file = event.target.files[0];
+
+            if (file) {
+                readFile(file, function (csvData) {
+                    const jsonData = convertCSVtoJSON(csvData);
+                    //displayJSONData(jsonData);
+                    createScatterPlot(jsonData);
+                    createBarChart(jsonData);
+                    createBoxPlot(jsonData);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
