@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="shortcut icon" href="static/img/circlecropped.png" type="image/croppedlogo">
     <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Binging Netflix Data - What's your next favorite show </title>
     <!-- D3 library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -22,7 +23,7 @@
         <ul class="sidebar-links">
             <li><a href="#showcase"><i class="fa-solid fa-house"></i>Home</a></li>
             <li><a href="#tabs"><i class="fa-solid fa-chart-line"></i>Statistics</a></li>
-            <li><a href="#Analytics"><i class="fa-solid fa-magnifying-glass-chart"></i>Analytics</a></li>
+            <li><a href="#analytics"><i class="fa-solid fa-magnifying-glass-chart"></i>Analytics</a></li>
             <li><a href="#Team"><i class="fa-solid fa-people-group"></i>Team Members</a></li>
         </ul>
     </nav>
@@ -300,12 +301,12 @@
                     </p>
                 </div>
                 <div class="memberList">
-                    <button id="brandon" class="btn-list"><span>BRANDON</span></button>
-                    <button id="gia" class="btn-list"><span>GIA</span></button>
-                    <button id="joe" class="btn-list"><span>JOE</span></button>
-                    <button id="julia" class="btn-list"><span>JULIA</span></button>
-                    <button id="minh" class="btn-list"><span>Minh</span></button>
-                </div>   
+                    <button id="brandon" class="btn-list"><i class="fa-brands fa-github-alt icon-brandon"></i> <span>BRANDON</span></button>
+                    <button id="gia" class="btn-list"><i class="fa-brands fa-github-alt icon-gia"></i><span>GIA</span></button>
+                    <button id="joe" class="btn-list"><i class="fa-brands fa-github-alt icon-joe"></i><span>JOE</span></button>
+                    <button id="julia" class="btn-list"><i class="fa-brands fa-github-alt icon-julia"></i><span>JULIA</span></button>
+                    <button id="minh" class="btn-list"><i class="fa-brands fa-github-alt icon-minh"></i><span>MINH</span></button>
+                </div>                  
                 <table id="table-brandon" class="table-list show-table">
                     <caption class="table-title">Brandon's List</caption>
                     <thead>
