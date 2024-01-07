@@ -4,14 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/69fddada70.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="static/img/circlecropped.png" type="image/croppedlogo">
     <link rel="stylesheet" href="static/css/style.css">
     <title>Binging Netflix Data - What's your next favorite show </title>
-    <link rel="icon" type="image/png" href="static/img/favicon.png">
+    <!-- D3 library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 
 <body>
-<!-- FRONT PAGE -->
-    <header class="showcase">
+     <!-- Hamburger Menu Icon -->
+     <div class="hamburger-menu">
+        <i class="fas fa-bars fa-3x"></i>
+    </div>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul class="sidebar-links">
+            <li><a href="#showcase"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="#tabs"><i class="fa-solid fa-chart-line"></i>Statistics</a></li>
+            <li><a href="#Analytics"><i class="fa-solid fa-magnifying-glass-chart"></i>Analytics</a></li>
+            <li><a href="#Team"><i class="fa-solid fa-people-group"></i>Team Members</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section starts-->
+
+    <header class="showcase" id="showcase">
         <div class="showcase-top">
             <img src="static/img/logo.png" alt="Netflix">
             <!-- <a href="#" class="btn btn-rounded">Go To Team</a> -->
@@ -25,8 +44,11 @@
         </div>
     </header>
 
-<!-- TABS HIGHLIGHTS PAGE -->
-    <section class="tabs">
+    <!-- Home Section ends-->
+
+    <!-- Statistics Section starts-->
+
+    <section class="tabs" id="tabs">
         <div class="container">
             <div id="tab-1" class="tab-item tab-border">
                 <i class="fa-solid fa-star fa-3x"></i>
@@ -42,7 +64,7 @@
             </div>
             <div id="tab-4" class="tab-item">
                 <i class="fa-solid fa-heart-circle-plus fa-3x"></i>
-                <p class="hide-sm">Recommendations</p>
+                <p class="hide-sm">Our Recommendations</p>
             </div>
         </div>
     </section>
@@ -61,7 +83,7 @@
                             <button id="series-top-10" class="btn-top btn-lg">Series</a>
                         </div>
                     </div>
-                    <table id="movies-top-10-table" class="table-top show-table">
+                    <table id="movies-top-10-table" class="table-top show-table show-table">
                         <caption class="table-title">Movies</caption>
                         <tbody>
                             <tr>
@@ -503,33 +525,88 @@
             </div>
         </div>
     </section>
-<!-- ANALYTICS PAGE -->
-    <section class="analytics">
 
-    </section>
-<!-- TEAM PAGE -->
-    <section class="team">
+    <!-- Statistics Section ends-->
 
-    </section>
+    <!-- Analytics section starts-->
 
-<!-- FOOTER -->
-    <footer class="footer">
-        <p>Questions?</p>
-        <div class="footer-cols">
-            <ul>
-                <li><a href="#">References</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Data Source</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Team</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">Help</a></li>
-            </ul>
+    <section class="Analytics" id="Analytics"></section>
+        <div class="jumbotron text-center">
+            <h1>Netflix Data Dashboard</h1>
+            <p>Explore interactive visualizations of Netflix viewing data</p>
         </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Select a Dataset:</h5>
+                    <select id="selDataset" class="form-control"></select>
+                </div>
+                <div class="col-md-9">
+                    <div id="sample-metadata" class="metadata-panel"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="bar"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="bubble"></div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Analytics section ends-->
+
+    <!-- Team Members section starts-->
+
+    <section class="Team" id="Team">
+        <div class="main-div">
+            <h1>Who's binging?</h1>
+            <div class="memberDiv">
+                <button class="btn"><span>Brandon</span></button>
+                <button class="btn"><span>Gia</span></button>
+                <button class="btn"><span>Joe</span></button>
+                <button class="btn"><span>Julia</span></button>
+                <button class="btn"><span>Minh</span></button>
+                <button class="addIcon"><i class="fas fa-plus-circle"></i> <span>Add Profile</span></button>
+            </div>
+            <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git" target="_blank" class="detailProfileLink">
+                <button class="detailProfile">detail Profile</button>
+            </a>            
+        </div>
+
+    </section>
+
+<!-- Team Members section ends-->
+
+<!-- Footer Starts -->
+    <footer>
+        <ul class="icons">
+            <li>
+                <a href="#"><i class="fa-solid fa-asterisk"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-brands fa-sourcetree"></i></a>
+            </li>
+            <li>
+                <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git"><i class="fa-brands fa-github"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-regular fa-file-powerpoint"></i></a>
+            </li>
+        </ul>
+        <ul class="menu">
+            <li>
+                <a href="#">References</a>
+                <a href="#">Data Source</a>
+                <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git">GitHub</a>
+                <a href="#">Presentation PPT</a>
+            </li>
+        </ul>
+        <p>Created by <i class="fa-solid fa-users-between-lines"></i> Group8 @UC Berkeley Extension_Fall 2023</p>
     </footer>
+<!-- Footer Ends -->
 
     <script src="/static/js/main.js"></script>
 </body>

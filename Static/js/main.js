@@ -1,48 +1,51 @@
+// Select DOM items
 const tabItems = document.querySelectorAll('.tab-item');
 const tabContentItems = document.querySelectorAll('.tab-content-item');
+const hamburger = document.querySelector('.hamburger-menu');
+const sidebar = document.querySelector('.sidebar');
 
-//Select tab content item
+const url = 'data';
+d3.json(url).then(function(data) {
+    console.log(data);
+  });
+
+// Functions for tab items
 function selectItem(e) {
     removeBorder();
     removeShow();
-    //add border to current tab
+    // Add border to current tab item
     this.classList.add('tab-border');
-    //grab content items from DOM
-    const tabContentItem = document.querySelector(`#${this.id}-content`)
-    //add show class
+    // Grab content from the DOM
+    const tabContentItem = document.querySelector(`#${this.id}-content`);
+    // Add show class to display the content
     tabContentItem.classList.add('show');
 }
 
 function removeBorder() {
-    tabItems.forEach(item => item.classList.remove('tab-border'))
+    tabItems.forEach(item => item.classList.remove('tab-border'));
 }
+
 function removeShow() {
-    tabContentItems.forEach(item => item.classList.remove('show'))
+    tabContentItems.forEach(item => item.classList.remove('show'));
 }
 
-//Listen for tab click
-tabItems.forEach(item => item.addEventListener('click', selectItem))
+// Listen for tab item click
+tabItems.forEach(item => item.addEventListener('click', selectItem));
 
-
-
-//Recommendation Table
-const buttonItems = document.querySelectorAll('.btn-list')
-const buttonListTables = document.querySelectorAll('.table-list');
-//select table content
-function selectTable(e) {
-    removeTable();
-    //grab table from DOM
-    const buttonListTable = document.querySelector(`#table-${this.id}`);
-    //add table class
-    buttonListTable.classList.add('show-table');
+// Functions for sidebar
+function toggleSidebar() {
+    sidebar.classList.toggle('active-sidebar');
 }
-function removeTable() {
-    buttonListTables.forEach(item => item.classList.remove('show-table'))
-}
-//listen for button click
-buttonItems.forEach(item => item.addEventListener('click', selectTable))
 
+// Listen for hamburger menu click
+hamburger.addEventListener('click', () => {
+    console.log("Hamburger clicked");
+    sidebar.classList.toggle('active-sidebar');
+});
 
+// Document Ready
+document.addEventListener('DOMContentLoaded', () => {
+});
 
 //Top-10 Table
 const buttonTopItems = document.querySelectorAll('.btn-top')
@@ -60,3 +63,20 @@ function removeTopTable() {
 }
 //listen for button click
 buttonTopItems.forEach(item => item.addEventListener('click', selectTopTable))
+
+//Recommendation Table
+const buttonItems = document.querySelectorAll('.btn-list')
+const buttonListTables = document.querySelectorAll('.table-list');
+//select table content
+function selectTable(e) {
+    removeTable();
+    //grab table from DOM
+    const buttonListTable = document.querySelector(`#table-${this.id}`);
+    //add table class
+    buttonListTable.classList.add('show-table');
+}
+function removeTable() {
+    buttonListTables.forEach(item => item.classList.remove('show-table'))
+}
+//listen for button click
+buttonItems.forEach(item => item.addEventListener('click', selectTable))

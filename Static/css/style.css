@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&display=swap');
+
 :root{
     --primary-color:#e50914;
     --dark-color:#141414;
@@ -112,7 +114,7 @@ img {
 .tabs {
     background: var(--dark-color);
     padding-top: 1rem;
-    border-bottom: 3px solid #3d3d3d;
+    border-bottom: 3px solid #3d3d3d
 }
 
 .tabs .container {
@@ -144,10 +146,31 @@ img {
     display: none;
 }
 
+/* Hide top-table Initially */
+#movies-top-10-table,
+#series-top-10-table {
+    display: none;
+}
+
+/* Hide recommendation list-table Initially */
+#table-brandon,
+#table-gia,
+#table-joe,
+#table-julia,
+#table-minh {
+    display: none;
+}
+
+
 .show {
     display: block !important;
 }
 
+/* Show table after click */
+.show-table {
+    display: table !important;
+    
+}
 
 /* layout of tab content */
 #tab-1-content .tab-1-content-inner {
@@ -160,8 +183,6 @@ img {
     align-items: center;
     justify-content: center;
 }
-
-
 /* layout of tab-2 text */
 #tab-2-content .tab-2-content-top {
     display: grid;
@@ -198,7 +219,7 @@ img {
 }
 
 /* Table */
-.table, .table-list, .table-top {
+.table, .table-list, .table-top{
     width: 100%;
     margin-top: 1.5rem;
     border-collapse: collapse;
@@ -218,7 +239,8 @@ img {
 .table tbody tr td:nth-child(2) {
     text-align: left;
 }
-.table tbody tr:nth-child(odd), .table-list tbody tr:nth-child(odd), .table-top tbody tr:nth-child(odd) {
+.table tbody tr:nth-child(odd), .table-list tbody tr:nth-child(odd),
+.table-top tbody tr:nth-child(odd) {
     background: #222;
 }
 
@@ -229,55 +251,272 @@ img {
     margin-bottom: 2rem;
     text-align: left;
 }
-
-/* Hide top-table Initially */
-#movies-top-10-table,
-#series-top-10-table {
-    display: none;
-}
-
-/* Hide list-table Initially */
-#table-brandon,
-#table-gia,
-#table-joe,
-#table-julia,
-#table-minh {
-    display: none;
-}
-
-
-
-/* Show table after click */
-.show-table {
-    display: table !important;
+/* recommendation list merge */
+.memberList {
+    width: 120%;
     
+
 }
+.memberList .btn-list {
+    height: 10vw;
+    /* min-height: 5rem;
+    max-height: 10rem; */
+    width: 10vw;
+    /* min-width: 5rem;
+    max-width: 20rem; */
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    margin-top: 3rem;
+    margin-right: 2.5rem;
+    position: relative;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.memberList .btn-list:nth-child(1) {
+    background-image: url(../img/Brandon.png);
+}
+.memberList .btn-list:nth-child(2) {
+    background-image: url(../img/Gia.png);
+}
+.memberList .btn-list:nth-child(3) {
+    background-image: url(../img/Joe.png);
+}
+.memberList .btn-list:nth-child(4) {
+    background-image: url(../img/Julia.png);
+}
+.memberList .btn-list:nth-child(5) {
+    background-image: url(../img/Minh.png);
+}
+.memberList .btn-list:hover{
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.9);
+}
+.memberList .btn-list span {
+    width: 100%;
+    position: absolute;
+    bottom: -2.2rem;
+    left: 0;
+    text-transform: capitalize;
+    color: rgb(153, 153, 153);
+    font-size: 1.5rem;
+}
+
+/*Analytics */
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.jumbotron {
+    background-color: #222;
+    color: white;
+    margin-bottom: 30px;
+    padding: 100px 25px;
+}
+
+.container-fluid {
+    padding: 15px 50px;
+}
+
+.metadata-panel {
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    height: 150px;
+    overflow-y: auto;
+}
+
+#bar, #bubble {
+    margin-top: 20px;
+}
+
+
+/* Team */
+
+.Team{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #141414;
+}
+
+.main-div{
+    width: 100vw;
+    height: 80vh;
+    /*background-color: rosybrown; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.main-div h1{
+    margin-top: 12rem;
+    font-size: 4.8rem;
+    letter-spacing: 0.2rem;
+    font-size: 600;
+}
+
+.memberDiv {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.memberDiv .btn,
+.addIcon {
+    height: 10vw;
+    min-height: 8.4rem;
+    max-height: 20rem;
+    width: 10vw;
+    min-width: 8.4px;
+    max-width: 20rem;
+    border-radius: 0.4rem;
+    border: none;
+    outline: none;
+    margin-top: 3rem;
+    margin-right: 2.5rem;
+    position: relative;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.memberDiv .btn:nth-child(1){
+    background-image: url(../img/Brandon.png);
+}
+
+.memberDiv .btn:nth-child(2){
+    background-image: url(../img/Gia.png);
+}
+
+.memberDiv .btn:nth-child(3){
+    background-image: url(../img/Joe.png);
+}
+
+.memberDiv .btn:nth-child(4){
+    background-image: url(../img/Julia.png);
+}
+
+.memberDiv .btn:nth-child(5){
+    background-image: url(../img/Minh.png);
+}
+
+.memberDiv .btn:hover{
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+.memberDiv .btn span, .addIcon span{
+    width: inherit;
+    /*background-color: red;*/
+    position: absolute;
+    bottom: -3rem;
+    left: 0;
+    text-transform: capitalize;
+    color: rgb(153, 153, 153);
+    font-size: 2rem;
+}
+
+.fa-circle-plus{
+    font-size: medium;
+    color: gray;
+    opacity: 0.8;
+}
+
+.addIcon{
+    background-color: transparent;
+}
+
+.addIcon:hover{
+    background-color: #fff;
+}
+
+.addIcon:hover > .fa-circle-plus{
+    opacity: 1;
+}
+
+.detailProfile {
+    border: 1px solid grey;
+    color: grey;
+    text-transform: uppercase;
+    padding: 0.8rem 2.6rem;
+    letter-spacing: 0.5rem;
+    font-size: 1.5rem;
+    margin-top: 12rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .detailProfile:hover {
+    border: 1px solid #fff;
+    color: #fff;
+  }
 
 /* Footer */
-.footer {
-    max-width: 75%;
-    margin: 1rem auto;
-    overflow: auto;
+footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #e50914;
+    height: 190px;
+    padding: 20px 50px;
+    flex-direction: column;
 }
 
-.footer, .footer a {
-    color: #999;
-    font-size: 0.9rem;
+footer .icons,
+footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
 }
 
-.footer p {
+footer .icons li,
+footer .menu li {
+    list-style: none;
+}
+
+footer .icons li a {
+    font-size: 2em;
+    color: #141414;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+footer .icons li a:hover {
+    transform: translateY(-10px);
+}
+
+footer .menu li a {
+    font-size: 1.2 rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+    transition: 0.5s;
+}
+
+footer .menu li a:hover {
+    opacity: 1;
+}
+footer p {
+    color: #fff;
     text-align: center;
-    margin-bottom: 1.5rem;
-}
-.footer .footer-cols {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 2rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    opacity: 0.75;
 }
 
-.footer li {
-    line-height: 1.9;
-}
 /* Containers */
 .container {
     /* percentage of the screen */
@@ -347,56 +586,66 @@ img {
     text-transform: uppercase;
 }
 
-.memberList {
-    width: 120%;
-    
-
-}
-.memberList .btn-list {
-    height: 10vw;
-    /* min-height: 5rem;
-    max-height: 10rem; */
-    width: 10vw;
-    /* min-width: 5rem;
-    max-width: 20rem; */
-    border-radius: 1rem;
-    border: none;
-    outline: none;
-    margin-top: 3rem;
-    margin-right: 2.5rem;
-    position: relative;
+/* Additional styles for the sidebar */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
     cursor: pointer;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.memberList .btn-list:nth-child(1) {
-    background-image: url(/static/img/Brandon.png);
-}
-.memberList .btn-list:nth-child(2) {
-    background-image: url(/static/img/Gia.png);
-}
-.memberList .btn-list:nth-child(3) {
-    background-image: url(/static/img/Joe.png);
-}
-.memberList .btn-list:nth-child(4) {
-    background-image: url(/static/img/Julia.png);
-}
-.memberList .btn-list:nth-child(5) {
-    background-image: url(/static/img/Minh.png);
-}
-.memberList .btn-list:hover{
-    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.9);
-}
-.memberList .btn-list span {
-    width: 100%;
-    position: absolute;
-    bottom: -2.2rem;
-    left: 0;
-    text-transform: capitalize;
-    color: rgb(153, 153, 153);
-    font-size: 1.5rem;
+    color: #fff;
 }
 
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh; /* Full height */
+    background: #000;
+    z-index: 100; /* High z-index to ensure visibility */
+    transition: left 0.3s;
+    padding-top: 60px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li a {
+    padding: 10px 15px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: #5757570b;
+}
+
+/* Adjust main content when sidebar is active */
+.active-sidebar + .main-content,
+.active-sidebar + header,
+.active-sidebar + .showcase {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+}
+
+.active-sidebar {
+    left: 0;
+}
 
 
 @media(max-width: 960px) {

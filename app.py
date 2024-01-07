@@ -21,15 +21,17 @@ engine = create_engine("sqlite:///Resources/netflix_data_db.sqlite")
 
 @app.route('/')
 def home():
-    return app.send_static_file('index.html')
+    return render_template('minh.html')
 
 
 @app.route('/data')
 def return_data():
     results = engine.execute('select * from netflix_data').all()
-    data=[]
-    for each_result in results:
-        data.append(list(each_result))
+    data = [r._asdict() for r in results]     
+    for d in data:
+        if d["Title"] == 'Title':
+            data.remove(d)
+            break
     return jsonify(data)
 
 
