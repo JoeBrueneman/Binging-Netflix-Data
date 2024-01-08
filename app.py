@@ -12,24 +12,37 @@ import psycopg2
 from flask import Flask, jsonify, render_template
 
 
+#################################################
+# Flask Setup
+#################################################
 
 app = Flask(__name__)
 
 
+#################################################
+# Database Setup
+#################################################
 
 engine = create_engine("sqlite:///Resources/netflix_data_db.sqlite")
 
 
+#################################################
+# Flask Routes
+#################################################
 
 @app.route('/')
 def home():
+    #Homepage render the index.html file from the templates folder
     return render_template('index.html')
 
 
 @app.route('/data')
 def return_data():
+    #Execute select all data from the netflix_data table
     results = engine.execute('select * from netflix_data').all()
-    data = [r._asdict() for r in results]    
+    #Putting data through a list of dictionaries
+    data = [r._asdict() for r in results]  
+    #Loop to split genres by the ","  
     for d in data:
         d['genres'] = d['genres'].split(',')
     for d in data:
@@ -39,5 +52,8 @@ def return_data():
     return jsonify(data)
 
 
+#################################################
+# Run App
+#################################################
 if __name__ =="__main__":
     app.run(debug = True)
