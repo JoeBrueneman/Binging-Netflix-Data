@@ -34,22 +34,22 @@ Introduction: This guide provides steps to access information about Netflix's mo
 --------------- 
 Step-by-Step Instructions:
 * Accessing the Webpage:
-   * Open your web browser.
-   * Enter "https://binging-netflix-data-online.onrender.com/" into the address bar and press Enter.
-   * * Navigating the Webpage:* Click on the "CLICK TO START EXPLORING" button to access four tabs:
-                           * "Top 10 Shows" reveals the top ten movies and series. Click on "MOVIES" or "SERIES" to view respective titles.
-                           * "Statistics" showcases analytics. Click "LEARN MORE ABOUT THIS" for graphical representations.
-                           * "Viewed Hours" displays the top 10 most watched shows. Click "SEE MORE" to access a dropdown with all show titles.
-                           * "Our Recommendation" reveals team members' top five show recommendations. Click on each profile picture for their choices.
-     * Accessing Show Information:
-            * Use the dropdown box to view all show titles.
-            * Select a show title to display its information in the box.
-            * The IMDb rating for the selected show is shown on a gauge chart.
-        * Accessing Code Information:
-            * Visit the "Who’s binging?" section.
-            * Click on the "DETAIL PROFILE" box to access this webpage’s GitHub site.
-        * Troubleshooting:
-            * For any issues, please contact our support team for assistance.
+  * Open your web browser.
+  * Enter "https://binging-netflix-data-online.onrender.com/" into the address bar and press Enter.
+* Navigating the Webpage:* Click on the "CLICK TO START EXPLORING" button to access four tabs:
+  * "Top 10 Shows" reveals the top ten movies and series. Click on "MOVIES" or "SERIES" to view respective titles.
+  * "Statistics" showcases analytics. Click "LEARN MORE ABOUT THIS" for graphical representations.
+  * "Viewed Hours" displays the top 10 most watched shows. Click "SEE MORE" to access a dropdown with all show titles.
+  * "Our Recommendation" reveals team members' top five show recommendations. Click on each profile picture for their choices.
+* Accessing Show Information:
+  * Use the dropdown box to view all show titles.
+  * Select a show title to display its information in the box.
+  * The IMDb rating for the selected show is shown on a gauge chart.
+* Accessing Code Information:
+  * Visit the "Who’s binging?" section.
+  * Click on the "DETAIL PROFILE" box to access this webpage’s GitHub site.
+* Troubleshooting:
+  * For any issues, please contact our support team for assistance.
         
 Conclusion: You've successfully navigated through the information on our webpage. Feel free to explore other features or reach out to our support team if needed.
 
