@@ -1,15 +1,23 @@
 # Binging_Netflix_Data
 Netflix has just made history by releasing, for the first time ever, a report which detailed 6 months of viewing data covering 99% of their portfolio. This report allowed new insights into what people watch on Netflix around the world, and this project was an effort to bring even more data into the picture. By merging Netflix’s data with public IMDB information, we were able to visualize more data on what people are watching, and what people are more likely to turn on when watching Netflix.
+
+![Landing_page_capture](https://github.com/JoeBrueneman/Binging_Netflix_Data/assets/142447460/a4e0ae9b-7c29-448a-8315-439a4924c203)
+
 Below is a summary of our website –
+
 Web Page Summary
 A Hub that provides an analytical exploration into Netflix’s vast content library, designed to engage users in discovering trends and insights within the streaming service’s viewership data.
+
 Home Page
 The welcome page interface allows users to explore a data-rich journey into Netflix’s most popular shows using a clear call-to-action button. Visual layouts powered by CSS styling and interactive JavaScript elements.
+
 Statistics Section
 It features interactive charts, and graphs built with libraries such as D3.js and Plotly, this section translates complex data into accessible visualizations. Users can interact with the Top 10 rated shows and movies, subscriber growth and explore the expansive reach and popularity of Netflix content.
 Recommendation tab is where curated picks from all the team members’ personalization meets data. This suggests potential favorite shows for users. The recommendations are generated through data processing with Python, showcasing the power of backend technologies such as Flask and Pandas in data manipulation.
+
 Analytics Section
 The core of the webpage is a dynamic dashboard displaying diverse visualizations, including gauge charts for IMDb ratings, bubble charts correlating ratings with viewing hours, and box plots showing genres vs ratings. The analytics tools involved, such as Plotly, D3.js that offers users the ability to filter data through movies/shows titles and customize visuals.
+
 Meet the Team
 The Team Members section introduced the creative analysts behind the project who made “Binging Netflix Data” a reality."
 
