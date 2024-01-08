@@ -296,52 +296,13 @@
                     </p>
                 </div>
                 <div class="memberList">
-                    <button id="brandon" class="btn-list">
-                        <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git" target="_blank">
-                            <i class="fa-brands fa-github-alt icon-brandon"></i>
-                        </a>
-                        <a href="#table-brandon">
-                            <span>BRANDON</span>
-                        </a>
-                    </button>
-                    
-                    <button id="gia" class="btn-list">
-                        <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git" target="_blank">
-                            <i class="fa-brands fa-github-alt icon-gia"></i>
-                        </a>
-                        <a href="#table-gia">
-                            <span>GIA</span>
-                        </a>
-                    </button>
-                    
-                    <button id="joe" class="btn-list">
-                        <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git" target="_blank">
-                            <i class="fa-brands fa-github-alt icon-joe"></i>
-                        </a>
-                        <a href="#table-joe">
-                            <span>JOE</span>
-                        </a>
-                    </button>
-                    
-                    <button id="julia" class="btn-list">
-                        <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git" target="_blank">
-                            <i class="fa-brands fa-github-alt icon-julia"></i>
-                        </a>
-                        <a href="#table-julia">
-                            <span>JULIA</span>
-                        </a>
-                    </button>
-                    
-                    <button id="minh" class="btn-list">
-                        <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git" target="_blank">
-                            <i class="fa-brands fa-github-alt icon-minh"></i>
-                        </a>
-                        <a href="#table-minh">
-                            <span>MINH</span>
-                        </a>
-                    </button>
+                    <button id="brandon" class="btn-list"><span>BRANDON</span></button>
+                    <button id="gia" class="btn-list"><span>GIA</span></button>
+                    <button id="joe" class="btn-list"><span>JOE</span></button>
+                    <button id="julia" class="btn-list"><span>JULIA</span></button>
+                    <button id="minh" class="btn-list"><span>Minh</span></button>
                 </div>
-                
+
                 <table id="table-brandon" class="table-list show-table">
                     <caption class="table-title">Brandon's List</caption>
                     <thead>
@@ -575,14 +536,16 @@
     </div>
     <!-- Information Box for Each Title -->
     <div class="analytics-body">
-        <div class="grid-container-infobox">
-            <div id="infobox-header" class="item1">CHOOSE A TITLE</div>
-            <select id="selDataset" class="item2" onchange="optionChanged(this.value)"></select>
-            <div id="infobox-menu" class="item3"><h3></h3></div>
-            <div id="infobox-main" class="item4"><h3></h3></div>
-        </div>
-        <div class="grid-container-gauge">
-            <div id="gauge"></div>
+        <div class="analytics-content">
+            <div class="grid-container-infobox">
+                <div id="infobox-header" class="item1">CHOOSE A TITLE</div>
+                <select id="selDataset" class="item2" onchange="optionChanged(this.value)"></select>
+                <div id="infobox-menu" class="item3"><h3></h3></div>
+                <div id="infobox-main" class="item4"><h3></h3></div>
+            </div>
+            <div class="grid-container-gauge">
+                <div id="gauge"></div>
+            </div>
         </div>
         <div class="grid-container-bar-top">
             <div id="bar-top"></div>
@@ -606,28 +569,40 @@
 
     <!-- Analytics section ends-->
 
-
     <!-- Team Members section starts-->
 
-    <section class="Team" id="Team">
+    <section class="team" id="team">
         <div class="main-div">
             <h1>Who's binging?</h1>
-            <div class="memberDiv">
-                <button class="btn"><span>Brandon</span></button>
-                <button class="btn"><span>Gia</span></button>
-                <button class="btn"><span>Joe</span></button>
-                <button class="btn"><span>Julia</span></button>
-                <button class="btn"><span>Minh</span></button>
-                <button class="addIcon"><i class="fas fa-plus-circle"></i> <span>Add Profile</span></button>
+            <div class="member-list">
+                <div class="member">
+                    <i class="fa-brands fa-github-alt icon-brandon"></i>
+                    <h3>Brandon</h3>
+                </div>
+                <div class="member">
+                    <i class="fa-brands fa-github-alt icon-gia"></i>
+                    <h3>Gia</h3>
+                </div>
+                <div class="member">
+                    <i class="fa-brands fa-github-alt icon-joe"></i>
+                    <h3>Joe</h3>
+                </div>
+                <div class="member">
+                    <i class="fa-brands fa-github-alt icon-julia"></i>
+                    <h3>Julia</h3>
+                </div>
+                <div class="member">
+                    <i class="fa-brands fa-github-alt icon-minh"></i>
+                    <h3>Minh</h3>
+                </div>
             </div>
-            <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git" target="_blank" class="detailProfileLink">
-                <button class="detailProfile">detail Profile</button>
-            </a>            
         </div>
-
+        <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git" target="_blank" class="detailProfileLink">
+            <button class="detailProfile">Detail Profile</button>
+        </a>            
     </section>
-
-<!-- Team Members section ends-->
+    
+    <!-- Team Members section ends-->
 
 
 <!-- Footer Starts -->
