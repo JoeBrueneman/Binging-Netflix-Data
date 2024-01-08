@@ -74,5 +74,6 @@ Data references
 
 Data Sources
 
-Netflix viewing data - https://about.netflix.com/en/news/what-we-watched-a-netflix-engagement-report 
-IMDB database information - https://developer.imdb.com/non-commercial-datasets/ 
+Netflix viewing data - https://about.netflix.com/en/news/what-we-watched-a-netflix-engagement-report
+
+IMDB database information - https://developer.imdb.com/non-commercial-datasets/
