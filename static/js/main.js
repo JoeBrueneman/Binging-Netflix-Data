@@ -88,21 +88,31 @@ d3.json(url).then(function(data) {
     console.log(data[0]); 
   });
 
-// 1. INFO-BOX : create function
-function infoBox(sample){
-    d3.json(url).then(function(data){
-        // find the matching title to sample title, this returns the list of the matching sampe title
-        let titleSampleMatch = data.filter(match => match.Title == sample);
-        // access the data within the array
+// 1. INFO-BOX: create function
+function infoBox(sample) {
+    d3.json(url).then(function(data) {
+        // Find the matching title to sample title, this returns the list of the matching sample title
+        let titleSampleMatch = data.filter(match => match.Title === sample);
+        
+        // Access the data within the array
         let titleSampleData = titleSampleMatch[0];
-        // clear the existing sample data out
+        
+        // Clear the existing sample data out
         d3.select("#infobox-main").html("");
-        // get the key/value pair and display in the info box
-        Object.entries(titleSampleData).forEach(([key,value])=>{
-            d3.select("#infobox-main").append("h3").text(`${key}: ${value}`);   
+        
+        // Define the keys you want to display
+        const keysToShow = ["Title", "Hours_Viewed", "Available_Global", "titleType", "averageRating", "numVotes", "genres", "tconst"];
+        
+        // Get the key/value pair and display in the info box
+        keysToShow.forEach(key => {
+            let value = titleSampleData[key];
+            if (value !== undefined) { // Check if the key exists in the data
+                // Append a new 'h3' element with the key-value pair
+                d3.select("#infobox-main").append("h3").text(`${key}: ${value}`);
+            }
         });
     });
-};  
+};
 
 // 2. GAUGE CHART for MDB RATING : create function 
 function gaugeChart(sample){
