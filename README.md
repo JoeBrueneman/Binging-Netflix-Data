@@ -69,7 +69,8 @@ Data references
 1.	Youtube content - ndriWebDev https://youtu.be/GL-jRHPSnPE?si=CEn22lD1lqY0Wnk5
 2.	Youtube content - codingLab https://youtu.be/wEfaoAa99XY?si=0PzpZuZDhXcA8hMQ 
 3.	Youtube content - Tyler Potts https://youtu.be/OFKBep95lb4?si=vCsd91bqDCBfPYYh 
-4.	Youtube content - Thapa Technical https://youtu.be/HxRhM5h--ro?si=ej0hwwGimHacVMo- 
+4.	Youtube content - Thapa Technical https://youtu.be/HxRhM5h--ro?si=ej0hwwGimHacVMo-
+5.	Youtube content - Traversy Media https://www.youtube.com/watch?v=P7t13SGytRk
 
 Data Sources
 Netflix viewing data - https://about.netflix.com/en/news/what-we-watched-a-netflix-engagement-report 
