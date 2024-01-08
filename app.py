@@ -29,7 +29,9 @@ def home():
 @app.route('/data')
 def return_data():
     results = engine.execute('select * from netflix_data').all()
-    data = [r._asdict() for r in results]     
+    data = [r._asdict() for r in results]    
+    for d in data:
+        d['genres'] = d['genres'].split(',')
     for d in data:
         if d["Title"] == 'Title':
             data.remove(d)

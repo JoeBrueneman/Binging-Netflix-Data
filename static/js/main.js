@@ -182,15 +182,14 @@ function bubbleChart(sample){
         })       
         // Set up the bubble chart
         let bubbleChart = {
-            x: x_viewedHours,
-            y: y_ratings,
+            x: y_ratings,
+            y: x_viewedHours,
             mode: "markers",
             marker:{
                 size: y_ratings,
                 color: y_ratings,
                 colorscale: "earth"
             },
-            // text: otu_labels
         };
         // Set up the layout
         let layout = {
@@ -201,8 +200,8 @@ function bubbleChart(sample){
                     }
                 },
             hovermode: "closest",
-            xaxis: {title: "Viewed Hours", color:"white"},
-            yaxis: {title: "IMDb Ratings", color:"white"},
+            yaxis: {title: "Viewed Hours", color:"white"},
+            xaxis: {title: "IMDb Ratings", color:"white"},
             plot_bgcolor:"black",
             paper_bgcolor:"black"
         };
@@ -217,11 +216,11 @@ function createScatterPlot(data) {
     d3.json(url).then(function(data){
         const labels = data.map(entry => entry.Title);
         const ratings = data.map(entry => entry.averageRating);
-        const votersPerViewHour = data.map(entry => entry.numVotes / entry.Hours_Viewed);
+        const votersPerViewHour = data.map(entry => entry.Hours_Viewed / entry.numVotes);
 
         const trace = {
-            x: ratings,
-            y: votersPerViewHour,
+            x: votersPerViewHour,
+            y: ratings,
             mode: 'markers',
             type: 'scatter',
             marker: {
@@ -239,7 +238,8 @@ function createScatterPlot(data) {
                 text: 'Scatter Plot of Ratings vs Voters per View Hour',
                 font: {
                     size: 20,
-                    weight: 'bold'
+                    weight: 'bold',
+                    color: "white",
                 }
             },
             xaxis: {
@@ -247,8 +247,10 @@ function createScatterPlot(data) {
                     text: 'Rating',
                     font: {
                         size: 16,
-                        weight: 'bold'
-                    }
+                        weight: 'bold',
+                        color: "white",
+                    },
+                    
                 }
             },
             yaxis: {
@@ -256,22 +258,13 @@ function createScatterPlot(data) {
                     text: 'Voters per View Hour',
                     font: {
                         size: 16,
-                        weight: 'bold'
+                        weight: 'bold',
+                        color: "white",
                     }
                 }
             },
             plot_bgcolor:"black",
             paper_bgcolor:"black",
-            // autosize: false,
-            // width: 1000,
-            // height: 500,
-            // margin: {
-            //     l: 50,
-            //     r: 50,
-            //     b: 100,
-            //     t: 100,
-            //     pad: 4
-            // },
         };
 
         Plotly.newPlot('scatterPlot', [trace], layout);
@@ -284,12 +277,12 @@ function createBoxPlot(sample) {
         // Extract genres and ratings
         const genres = [];
         const ratings = [];
-        data.forEach((i)=>{
-            genres.push(i.genres)
-        })    
-        data.forEach((i)=>{
-            ratings.push(i.averageRating)
-        }) 
+        data.forEach(entry => {
+            entry.genres.forEach(genre => {
+                genres.push(genre);
+                ratings.push(entry.averageRating);
+            });
+        });
 
         // Create traces for each genre
         const traces = [];
@@ -309,7 +302,8 @@ function createBoxPlot(sample) {
                 text: 'Box Plot - Genres vs Rating',
                 font: {
                     size: 20,
-                    weight: 'bold'
+                    weight: 'bold',
+                    color: "white",
                 }
             },
             xaxis: {
@@ -317,18 +311,28 @@ function createBoxPlot(sample) {
                     text: 'Genres',
                     font: {
                         size: 16,
-                        weight: 'bold'
+                        weight: 'bold',
+                        color: "white",
                     }
                 },
+                tickfont: {
+                    size: 12,
+                    color:"white"
+                }
             },
             yaxis: {
                 title: {
                     text: 'Rating',
                     font: {
                         size: 16,
-                        weight: 'bold'
+                        weight: 'bold',
+                        color: "white",
                     }
                 },
+                tickfont: {
+                    size: 12,
+                    color:"white"
+                }
             },
             plot_bgcolor:"black",
             paper_bgcolor:"black",
@@ -338,59 +342,146 @@ function createBoxPlot(sample) {
     });
 }
 
+//6. BAR CHART: GENRES VS. VIEWED HOURS
+function createBarChart(data) {
+    const genresData = {};
 
+    data.forEach((entry) => {
+        entry.genres.forEach((genre) => {
+            if (genre !== '\\N') {
+                genresData[genre] = (genresData[genre] || 0) + entry.Hours_Viewed;
+            }
+        });
+    });
 
-// //TOP 10 MOVIE/SERIES BAR GRAPH : Ploting bar chart for top 10 movies and series
-// //Create function for bar chart of top 10 Movies with viewed hours
-// function bartopChart(sample){
-//     d3.json(url).then(function(data){
-//         // title names for y-axis
-//         let titleData = data.map(d=>d[0]);
-//         // viewed hours for x-axis
-//         let viewedHours = data.map(d=>d[1]);
+    // Sort genres in descending order of hours viewed
+    const sortedGenres = Object.keys(genresData).sort((a, b) => genresData[b] - genresData[a]);
+    const genreHoursViewed = sortedGenres.map(genre => genresData[genre]);
 
-//         // Find the array of matching sample title to titles data
-//         let titleSampleMatch = titleData.filter(match => match == sample);
-//         // Access the rest of the data within the array
-//         let titleIndex = titleData.findIndex(x =>x==titleSampleMatch)
-//         let titleSampleData = data[titleIndex];
-//         let category = titleSampleData[8]
-//         //filter out the matching data to this category
+    const trace = {
+        x: sortedGenres,
+        y: genreHoursViewed,
+        type: 'bar',
+        marker: {
+            color: sortedGenres.map((genre, index) => `rgba(0, 187, 249, ${1 - index / sortedGenres.length})`),
+            line: {
+                color: 'rgba(75, 192, 192, 1)',
+                width: 1
+            }
+        }
+    };
 
-//         let categoryMatch = data.filter(match => match == category)
-//         let title_name = categoryMatch.map(d=>d[1]);
-//         let title_labels = categoryMatch.map(d=>d[1]);
-//         let viewed_hours = categoryMatch.map(d=>d[2]);
+    const layout = {
+        xaxis: {
+            title: {
+                text: 'Genres',
+                font: {
+                    size: 16,
+                    weight: 'bold',
+                    color: "white",
+                }
+            },
+            tickfont: {
+                size: 12,
+                color:"white"
+            }
+        },
+        yaxis: {
+            title: {
+                text: 'Total Hours Viewed',
+                font: {
+                    size: 16,
+                    weight: 'bold',
+                    color: "white",
+                }
+            },
+            tickfont: {
+                size: 12,
+                color:"white"
+            }
+        },
+        title: {
+            text: 'Popularity of Genres based on Hours Viewed',
+            font: {
+                size: 20,
+                weight: 'bold',
+                color: "white",
+            }
+        },
+        plot_bgcolor:"black",
+        paper_bgcolor:"black",
+    };
 
-//         let yTicks = title_name.slice(0,11);
-//         let xValues = viewed_hours.slice(0,11);
-//         let textLabels = title_labels.slice(0,11);
+    Plotly.newPlot('barChart', [trace], layout);
+}
 
+//7. BAR CHART: TITLE TYPE VS. VIEWED HOURS
+function createBarChartTitleType(data) {
+    // const genresData = {};
+    let x_titleType=[]
+    data.forEach((i)=>{
+        x_titleType.push(i.titleType)
+    })
+    // get all of the viewed hours data
+    let y_viewedHours=[]
+    data.forEach((i)=>{
+        y_viewedHours.push(i.Hours_Viewed)
+    })       
+    const trace = {
+        x: x_titleType,
+        y: y_viewedHours,
+        type: 'bar',
+        marker: {
+            line: {
+                color: 'rgba(75, 192, 192, 1)',
+                width: 1
+            }
+        }
+    };
 
-//         // Slice the first 10 (happens to be the top 10) titles for display
-//         // let yTicks = titleData.slice(0,11);
-//         // let xValues = viewedHours.slice(0,11);
-//         // let textLabels = titleData.slice(0,11);
-        
-//         // Set up bar chart
-//         let barChart = {
-//             x: xValues.reverse(),
-//             y: yTicks.reverse(),
-//             text: textLabels.reverse(),
-//             type:"bar",
-//             orientation: "h"
-//         };
-//         // Set up the layout
-//         let layout = {
-//             title: "Top 10 Titles",
-//             plot_bgcolor:"black",
-//             paper_bgcolor:"black"
-//         };
-//         // Plot the bar chart
-//         Plotly.newPlot("bar-top",[barChart],layout)
-//     });
-// };
-// //COMPARE BOX PLOT
+    const layout = {
+        xaxis: {
+            title: {
+                text: 'Title Type',
+                font: {
+                    size: 16,
+                    weight: 'bold',
+                    color: "white",
+                }
+            },
+            tickfont: {
+                size: 12,
+                color:"white"
+            }
+        },
+        yaxis: {
+            title: {
+                text: 'Total Hours Viewed',
+                font: {
+                    size: 16,
+                    weight: 'bold',
+                    color: "white",
+                }
+            },
+            tickfont: {
+                size: 12,
+                color:"white"
+            }
+        },
+        title: {
+            text: 'Popularity of Title Type based on Hours Viewed',
+            font: {
+                size: 20,
+                weight: 'bold',
+                color: "white",
+            }
+        },
+        plot_bgcolor:"black",
+        paper_bgcolor:"black",
+    };
+
+    Plotly.newPlot('barChart-titleType', [trace], layout);
+}
 
 // INITIALIZE FUNCTIONS
 function init(){
@@ -409,26 +500,20 @@ function init(){
         infoBox(sample0);
         gaugeChart(sample0);
         bubbleChart(data);
-        // let categoryName = data.map()
-        // bartopChart(sample0);
-        // barChart(data);
-        
+        createScatterPlot(data);
+        createBoxPlot(data);
+        createBarChart(data);
+        createBarChartTitleType(data);
     })
 };
 
 // Create function to update the dashboard
 function optionChanged(item)
 {
-     // call the function to build the demographics box
+    // call the function to build the demographics box
     infoBox(item);
 
-    // call the function to build the bar chart
-    // bartopChart(item);
-
-    // // call the function to build the bubble chart
-    // bubbleChart(item);
-
-    // // call the function to build the gauge chart
+    // call the function to build the gauge chart
     gaugeChart(item);
 }
 // CALL INITIALIZED FUNCTIONS
