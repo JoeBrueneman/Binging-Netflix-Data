@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/69fddada70.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="static/img/circlecropped.png" type="image/croppedlogo">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Binging Netflix Data - What's your next favorite show </title>
+    <!-- D3 library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+     <!-- Hamburger Menu Icon -->
+     <div class="hamburger-menu">
+        <i class="fas fa-bars fa-3x"></i>
+    </div>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul class="sidebar-links">
+            <li><a href="#showcase"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="#tabs"><i class="fa-solid fa-chart-line"></i>Statistics</a></li>
+            <li><a href="#Analytics"><i class="fa-solid fa-magnifying-glass-chart"></i>Analytics</a></li>
+            <li><a href="#Team"><i class="fa-solid fa-people-group"></i>Team Members</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section starts-->
+
+    <header class="showcase" id="showcase">
+        <div class="showcase-top">
+            <img src="static/img/logo.png" alt="Netflix">
+            <!-- <a href="#" class="btn btn-rounded">Go To Team</a> -->
+        </div>
+        <div class="showcase-content">
+            <h1>What To Know About Netflix</h1>
+            <p>Find out the most watched shows</p>
+            <a href="#tab-1" class="btn btn-xl">
+                Click to Start Exploring <i class="fas fa-chevron-right btn-icon"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Home Section ends-->
+
+    <!-- Statistics Section starts-->
+
+    <section class="tabs" id="tabs">
+        <div class="container">
+            <div id="tab-1" class="tab-item tab-border">
+                <i class="fa-solid fa-star fa-3x"></i>
+                <p class="hide-sm">Top 10 Shows</p>
+            </div>
+            <div id="tab-2" class="tab-item">
+                <i class="fa-solid fa-chart-column fa-3x"></i>
+                <p class="hide-sm">Statistics</p>
+            </div>
+            <div id="tab-3" class="tab-item">
+                <i class="fa-solid fa-clock fa-3x"></i>
+                <p class="hide-sm">Viewed Hours</p>
+            </div>
+            <div id="tab-4" class="tab-item">
+                <i class="fa-solid fa-heart-circle-plus fa-3x"></i>
+                <p class="hide-sm">Our Recommendations</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tab-content">
+        <div class="container">
+            <!-- Tab Content 1 --> 
+            <div id="tab-1-content" class="tab-content-item show">
+                <div class="tab-1-content-inner">
+                    <div class="tab-1-content-left">
+                        <p class="text-lg">
+                            Top 10 Shows on Netflix
+                        </p>
+                        <div class="tab-1-content-button">
+                            <button id="movies-top-10" class="btn-top btn-lg">Movies</a>
+                            <button id="series-top-10" class="btn-top btn-lg">Series</a>
+                        </div>
+                    </div>
+                    <table id="movies-top-10-table" class="table-top show-table show-table">
+                        <caption class="table-title">Movies</caption>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Luther: The Fallen Sun</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Extraction 2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>You People</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Murder Mystery 2</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Your Place or Mine</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Shooter</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>We Have a Ghost</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>The Pale Blue Eye</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Aka</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Minions: The Rise of Gru</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table id="series-top-10-table" class="table-top">
+                        <caption class="table-title">Series</caption>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Ginny & Georgia</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>The Night Agent</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>You</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Outer Banks</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>The Walking Dead</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>The Glory</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>La Reina del Sur</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Cocomelon</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Suits</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>The Blacklist</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Tab Content 2 -->
+            <div id="tab-2-content" class="tab-content-item">
+                <div class="tab-2-content-top">
+                    <p class="text-lg">
+                        Subscribers and Users. 
+                        Shows and Movies. 
+                        Countries and Demographics.
+                    </p>
+                    <a href="#" class="btn btn-lg">Learn More About This</a>
+                </div>
+                <div class="tab-2-content-bottom">
+                    <div>
+                        <img src="static/img/tab-content-2-1.png" alt="">
+                        <p class="text-md">Subscribers Growth</p>
+                        <p class="text-dark">
+                            description of graph 2-1
+                        </p>
+                    </div>
+
+                    <div>
+                        <img src="static/img/tab-content-2-2.png" alt="">
+                        <p class="text-md">Countries</p>
+                        <p class="text-dark">
+                            description of graph 2-2
+                        </p>
+                    </div>
+
+                    <div>
+                        <img src="static/img/tab-content-2-3.png" alt="">
+                        <p class="text-md">Price per Share Growth</p>
+                        <p class="text-dark">
+                            description of graph 2-3
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Tab Content 3 -->
+            <div id="tab-3-content" class="tab-content-item">
+                <div class="text-center">
+                    <p class="text-lg">
+                        Top 10 Most Watched Shows
+                    </p>
+                    <a href="#" class="btn btn-lg">See More</a>
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Title</th>
+                            <th>Hours Viewed</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Ginny & Georgia</td>
+                            <td>967,200,000</td>
+                            <td>7.5</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>The Night Agent</td>
+                            <td>812,100,000</td>
+                            <td>7.5</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>You</td>
+                            <td>766,300,000</td>
+                            <td>7.7</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Outer Banks</td>
+                            <td>740,400,000</td>
+                            <td>7.5</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>The Walking Dead</td>
+                            <td>738,600,000</td>
+                            <td>8.1</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>The Glory</td>
+                            <td>622,800,000</td>
+                            <td>8.1</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>La Reina Del Sur</td>
+                            <td>616,800,000</td>
+                            <td>7.9</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Cocomelon</td>
+                            <td>601,200,000</td>
+                            <td>4.3</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Suits</td>
+                            <td>599,300,000</td>
+                            <td>8.4</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>The Blacklist</td>
+                            <td>596,900,000</td>
+                            <td>7.9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+             <!-- Tab Content 4 --> 
+             <div id="tab-4-content" class="tab-content-item">
+                <div class="text-center">
+                    <p class="text-lg">
+                        Our Recommendations
+                    </p>
+                </div>
+                <div class="memberList">
+                    <button id="brandon" class="btn-list"><span>BRANDON</span></button>
+                    <button id="gia" class="btn-list"><span>GIA</span></button>
+                    <button id="joe" class="btn-list"><span>JOE</span></button>
+                    <button id="julia" class="btn-list"><span>JULIA</span></button>
+                    <button id="minh" class="btn-list"><span>Minh</span></button>
+                </div>   
+                <table id="table-brandon" class="table-list show-table">
+                    <caption class="table-title">Brandon's List</caption>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Genre</th>
+                            <th>Category</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lost</td>
+                            <td>Adventure, Drama, Fantasy</td>
+                            <td>Series</td>
+                            <td>8.3</td>
+                        </tr>
+                        <tr>
+                            <td>Space Force</td>
+                            <td>Comedy</td>
+                            <td>Series</td>
+                            <td>6.7</td>
+                        </tr>
+                        <tr>
+                            <td>Star Trek: Voyager</td>
+                            <td>Action, Adventure, Sci-Fi</td>
+                            <td>Series</td>
+                            <td>7.9</td>
+                        </tr>
+                        <tr>
+                            <td>The Hunger Games</td>
+                            <td>Action, Adventure, Sci-Fi</td>
+                            <td>Movie</td>
+                            <td>7.2</td>
+                        </tr>
+                        <tr>
+                            <td>Taken</td>
+                            <td>Action, Crime, Thriller</td>
+                            <td>Movie</td>
+                            <td>7.8</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="table-gia" class="table-list">
+                    <caption class="table-title">Gia's List</caption>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Genre</th>
+                            <th>Category</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dark</td>
+                            <td>Science Fiction</td>
+                            <td>Series</td>
+                            <td>9.0</td>
+                        </tr>
+                        <tr>
+                            <td>The Queen's Gambit</td>
+                            <td>Drama</td>
+                            <td>Series</td>
+                            <td>9.5</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>Science Fiction</td>
+                            <td>Series</td>
+                            <td>8.5</td>
+                        </tr>
+                        <tr>
+                            <td>Stranger Things</td>
+                            <td>Science Fiction</td>
+                            <td>Series</td>
+                            <td>8.7</td>
+                        </tr>
+                        <tr>
+                            <td>Breaking Bad</td>
+                            <td>Crime</td>
+                            <td>Series</td>
+                            <td>8.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="table-joe" class="table-list">
+                    <caption class="table-title">Joe's List</caption>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Genre</th>
+                            <th>Category</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ginny & Georgia</td>
+                            <td>Comedy, Drama</td>
+                            <td>Series</td>
+                            <td>7.5</td>
+                        </tr>
+                        <tr>
+                            <td>Suits</td>
+                            <td>Drama, Comedy</td>
+                            <td>Series</td>
+                            <td>8.4</td>
+                        </tr>
+                        <tr>
+                            <td>The Blacklist</td>
+                            <td>Crime, Drama, Mystery</td>
+                            <td>Series</td>
+                            <td>7.9</td>
+                        </tr>
+                        <tr>
+                            <td>Brooklyn Nine-Nine</td>
+                            <td>Comedy, Crime</td>
+                            <td>Series</td>
+                            <td>8.4</td>
+                        </tr>
+                        <tr>
+                            <td>Hunter x Hunter</td>
+                            <td>Action, Adventure, Animation</td>
+                            <td>Series</td>
+                            <td>9.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="table-julia" class="table-list">
+                    <caption class="table-title">Julia's List</caption>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Genre</th>
+                            <th>Category</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Friends</td>
+                            <td>Comedy, Romance</td>
+                            <td>Series</td>
+                            <td>8.9</td>
+                        </tr>
+                        <tr>
+                            <td>The Queen's Gambit</td>
+                            <td>Drama</td>
+                            <td>Series</td>
+                            <td>9.5</td>
+                        </tr>
+                        <tr>
+                            <td>Stranger Things</td>
+                            <td>Science Fiction</td>
+                            <td>Series</td>
+                            <td>8.5</td>
+                        </tr>
+                        <tr>
+                            <td>Jefferey Dahmer</td>
+                            <td>Science Fiction</td>
+                            <td>Series</td>
+                            <td>8.7</td>
+                        </tr>
+                        <tr>
+                            <td>That 70's Show</td>
+                            <td>Crime</td>
+                            <td>Series</td>
+                            <td>8.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="table-minh" class="table-list">
+                    <caption class="table-title">Minh's List</caption>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Genre</th>
+                            <th>Category</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>The Breaking Bad</td>
+                            <td>Crime, Drama, Thriller</td>
+                            <td>Series</td>
+                            <td>9.5</td>
+                        </tr>
+                        <tr>
+                            <td>The Good Place</td>
+                            <td>Comedy, Drama, Fantasy</td>
+                            <td>Series</td>
+                            <td>8.2</td>
+                        </tr>
+                        <tr>
+                            <td>Manifest</td>
+                            <td>Drama, Mystery, Sci-Fi</td>
+                            <td>Series</td>
+                            <td>7.1</td>
+                        </tr>
+                        <tr>
+                            <td>Ozark</td>
+                            <td>Crime, Drama, Thriller</td>
+                            <td>Series</td>
+                            <td>8.5</td>
+                        </tr>
+                        <tr>
+                            <td>The Umbrella Academy</td>
+                            <td>Action, Adventure, Comedy</td>
+                            <td>Series</td>
+                            <td>7.9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section ends-->
+
+    <!-- Analytics section starts-->
+    <!-- Header of the page -->
+    <section class="analytics" id="analytics"></section>
+    <div class="analytics-header">
+        <div class="jumbotron text-center">
+            <h1>Netflix Data Dashboard</h1>
+            <p>Explore interactive visualizations of Netflix viewing data</p>
+        </div>
+    </div>
+    <!-- Information Box for Each Title -->
+    <div class="analytics-body">
+        <div class="grid-container-infobox">
+            <div id="infobox-header" class="item1">CHOOSE A TITLE</div>
+            <select id="selDataset" class="item2" onchange="optionChanged(this.value)"></select>
+            <div id="infobox-menu" class="item3"><h3></h3></div>
+            <div id="infobox-main" class="item4"><h3></h3></div>
+        </div>
+        <div class="grid-container-gauge">
+            <div id="gauge"></div>
+        </div>
+        <div class="grid-container-bar-top">
+            <div id="bar-top"></div>
+        </div>
+        <div class="grid-container-bubble">
+            <div id="bubble"></div>
+        </div>
+        <div class="grid-container-bar">
+            <div id="bar"></div>
+        </div>
+
+
+    </div>
+                
+
+    <!-- Analytics section ends-->
+
+    <!-- Team Members section starts-->
+
+    <section class="Team" id="Team">
+        <div class="main-div">
+            <h1>Who's binging?</h1>
+            <div class="memberDiv">
+                <button class="btn"><span>Brandon</span></button>
+                <button class="btn"><span>Gia</span></button>
+                <button class="btn"><span>Joe</span></button>
+                <button class="btn"><span>Julia</span></button>
+                <button class="btn"><span>Minh</span></button>
+                <button class="addIcon"><i class="fas fa-plus-circle"></i> <span>Add Profile</span></button>
+            </div>
+            <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git" target="_blank" class="detailProfileLink">
+                <button class="detailProfile">detail Profile</button>
+            </a>            
+        </div>
+
+    </section>
+
+<!-- Team Members section ends-->
+
+<!-- Footer Starts -->
+    <footer>
+        <ul class="icons">
+            <li>
+                <a href="#"><i class="fa-solid fa-asterisk"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-brands fa-sourcetree"></i></a>
+            </li>
+            <li>
+                <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git"><i class="fa-brands fa-github"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-regular fa-file-powerpoint"></i></a>
+            </li>
+        </ul>
+        <ul class="menu">
+            <li>
+                <a href="#">References</a>
+                <a href="#">Data Source</a>
+                <a href="https://github.com/JoeBrueneman/Binging_Netflix_Data.git">GitHub</a>
+                <a href="#">Presentation PPT</a>
+            </li>
+        </ul>
+        <p>Created by <i class="fa-solid fa-users-between-lines"></i> Group8 @UC Berkeley Extension_Fall 2023</p>
+    </footer>
+<!-- Footer Ends -->
+
+    <script src="static/js/main.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</body>
+</html>
