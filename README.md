@@ -54,6 +54,10 @@ Step-by-Step Instructions:
 Conclusion: You've successfully navigated through the information on our webpage. Feel free to explore other features or reach out to our support team if needed.
 
 
+
+
+
+
 This effort was made possible after taking the data from it’s source all the way to the final product, including using Python(Jupyter notebook/pandas), Flask, PostgreSQL, and JS with HTML front end.
 
 During the course of this project we only used datasets which were publicly available, and we did not use them for any commercial product. While coding we took efforts to keep track of and credit any code which was not originally ours, and documented any extra resources we did use. Since the datasets do not include any personal information there were no ethical concerns for any persons viewing data.
