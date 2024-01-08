@@ -33,16 +33,15 @@ Webpage Instructions: Exploring Netflix Data Insights
 Introduction: This guide provides steps to access information about Netflix's most viewed shows, statistical analytics, and recommendations.
 --------------- 
 Step-by-Step Instructions:
-Markup : * Accessing the Webpage:
-            * Open your web browser.
-            * Enter "https://binging-netflix-data-online.onrender.com/" into the address bar and press Enter.
-        * Navigating the Webpage:
-            * Click on the "CLICK TO START EXPLORING" button to access four tabs:
-              * "Top 10 Shows" reveals the top ten movies and series. Click on "MOVIES" or "SERIES" to view respective titles.
-              * "Statistics" showcases analytics. Click "LEARN MORE ABOUT THIS" for graphical representations.
-              * "Viewed Hours" displays the top 10 most watched shows. Click "SEE MORE" to access a dropdown with all show titles.
-              * "Our Recommendation" reveals team members' top five show recommendations. Click on each profile picture for their choices.
-        * Accessing Show Information:
+* Accessing the Webpage:
+   * Open your web browser.
+   * Enter "https://binging-netflix-data-online.onrender.com/" into the address bar and press Enter.
+   * * Navigating the Webpage:* Click on the "CLICK TO START EXPLORING" button to access four tabs:
+                           * "Top 10 Shows" reveals the top ten movies and series. Click on "MOVIES" or "SERIES" to view respective titles.
+                           * "Statistics" showcases analytics. Click "LEARN MORE ABOUT THIS" for graphical representations.
+                           * "Viewed Hours" displays the top 10 most watched shows. Click "SEE MORE" to access a dropdown with all show titles.
+                           * "Our Recommendation" reveals team members' top five show recommendations. Click on each profile picture for their choices.
+     * Accessing Show Information:
             * Use the dropdown box to view all show titles.
             * Select a show title to display its information in the box.
             * The IMDb rating for the selected show is shown on a gauge chart.
