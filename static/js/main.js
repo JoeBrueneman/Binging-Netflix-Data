@@ -202,88 +202,134 @@ function bubbleChart(sample){
 
 };
 
-// // 4. BAR CHART : Create function for bar chart: genre vs. viewed hours
-// function barChart(sample){
-//     d3.json(url).then(function(data){
-//         // get all of the viewed hours data
-//         let y_viewedHours=[]
-//         data.forEach((i)=>{
-//             y_viewedHours.push(i.Hours_Viewed)
-//         })      
-//         // get all the genre data
-//         let x_genre = []
-//         data.forEach((i)=>{
-//             x_genre.push(i.genres)
-//         }) 
-//         // Set up bar chart
-//         var data = [{
-//             type: 'box',
-//             y: y_viewedHours,
-//             name: x_genre,
-            
-//             boxpoints: 'all',
-//             jitter: 0.5,
-//             whiskerwidth: 0.2,
-//             fillcolor: 'cls',
-//             marker: {
-//                 size: 2
-//             },
-//             line: {
-//                 width: 1
-//             }
-//         }];
-//         layout = {
-//             title: 'Points Scored by the Top 9 Scoring NBA Players in 2012',
-//             yaxis: {
-//                 autorange: true,
-//                 showgrid: true,
-//                 zeroline: true,
-//                 dtick: 5,
-//                 gridcolor: 'rgb(255, 255, 255)',
-//                 gridwidth: 1,
-//                 zerolinecolor: 'rgb(255, 255, 255)',
-//                 zerolinewidth: 2
-//             },
-//             margin: {
-//                 l: 40,
-//                 r: 30,
-//                 b: 80,
-//                 t: 100
-//             },
-//             paper_bgcolor: 'rgb(243, 243, 243)',
-//             plot_bgcolor: 'rgb(243, 243, 243)',
-//             showlegend: false
-//         }; 
+// 4. SCATTER CHART for voters vs. viewed hours : create function 
+function createScatterPlot(data) {
+    d3.json(url).then(function(data){
+        const labels = data.map(entry => entry.Title);
+        const ratings = data.map(entry => entry.averageRating);
+        const votersPerViewHour = data.map(entry => entry.numVotes / entry.Hours_Viewed);
 
-//         Plotly.newPlot('bar',data,layout)
-//         // let barChart = [{
-//         //     type:"bar",
-//         //     x:genreData,
-//         //     y:viewedHours,
-//         //     mode: "markers",
-//         //     transforms:[{
-//         //         type:"aggregate",
-//         //         groups:genreData,
-//         //         aggregations:[
-//         //             {target:"y", func:"sum", enable:true}
-//         //         ]
-//         //     }]
-//         // }]
-//         // let layout = {
-//         //     title: {
-//         //         text:"Viewed Hours vs. Genre",
-//         //         font:{
-//         //             size:10,
-//         //             color:"white"
-//         //         }
-//         // },
-//         //     plot_bgcolor:"black",
-//         //     paper_bgcolor:"black"
-//         // };
+        const trace = {
+            x: ratings,
+            y: votersPerViewHour,
+            mode: 'markers',
+            type: 'scatter',
+            marker: {
+                size: 10,
+                color: '#00bbf9',
+                line: {
+                    color: 'rgba(75, 192, 192, 1)',
+                    width: 1
+                }
+            }
+        };
 
-//         // Plotly.newPlot('bar',barChart,layout)
-//     });
-// };
+        const layout = {
+            title: {
+                text: 'Scatter Plot of Ratings vs Voters per View Hour',
+                font: {
+                    size: 20,
+                    weight: 'bold'
+                }
+            },
+            xaxis: {
+                title: {
+                    text: 'Rating',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    }
+                }
+            },
+            yaxis: {
+                title: {
+                    text: 'Voters per View Hour',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    }
+                }
+            },
+            plot_bgcolor:"black",
+            paper_bgcolor:"black",
+            // autosize: false,
+            // width: 1000,
+            // height: 500,
+            // margin: {
+            //     l: 50,
+            //     r: 50,
+            //     b: 100,
+            //     t: 100,
+            //     pad: 4
+            // },
+        };
+
+        Plotly.newPlot('scatterPlot', [trace], layout);
+    });
+};
+
+// 5. BOXPLOT CHART FOR GENRE VS. VIEWED HOURS:
+function createBoxPlot(sample) {
+    d3.json(url).then(function(data){
+        // Extract genres and ratings
+        const genres = [];
+        const ratings = [];
+        data.forEach((i)=>{
+            genres.push(i.genres)
+        })    
+        data.forEach((i)=>{
+            ratings.push(i.averageRating)
+        }) 
+
+        // Create traces for each genre
+        const traces = [];
+
+        [...new Set(genres)].forEach(genre => {
+            const genreData = ratings.filter((_, i) => genres[i] === genre);
+
+            traces.push({
+                y: genreData,
+                type: 'box',
+                name: genre,
+            });
+        });
+
+        const layout = {
+            title: {
+                text: 'Box Plot - Genres vs Rating',
+                font: {
+                    size: 20,
+                    weight: 'bold'
+                }
+            },
+            xaxis: {
+                title: {
+                    text: 'Genres',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    }
+                },
+            },
+            yaxis: {
+                title: {
+                    text: 'Rating',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    }
+                },
+            },
+            plot_bgcolor:"black",
+            paper_bgcolor:"black",
+        };
+
+        Plotly.newPlot('boxplot', traces, layout);
+    });
+}
+
+
+
 // //TOP 10 MOVIE/SERIES BAR GRAPH : Ploting bar chart for top 10 movies and series
 // //Create function for bar chart of top 10 Movies with viewed hours
 // function bartopChart(sample){
