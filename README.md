@@ -60,7 +60,7 @@ Conclusion: You've successfully navigated through the information on our webpage
 
 This effort was made possible after taking the data from it’s source all the way to the final product, including using Python(Jupyter notebook/pandas), Flask, PostgreSQL, and JS with HTML front end.
 
-During the course of this project we only used datasets which were publicly available, and we did not use them for any commercial product. While coding we took efforts to keep track of and credit any code which was not originally ours, and documented any extra resources we did use. Since the datasets do not include any personal information there were no ethical concerns for any persons viewing data.
+During the course of this project we only used datasets which were publicly available, and we did not use them for any commercial product. While coding we took efforts to keep track of and credit any code which was not originally ours, and documented any extra resources we did use. Since the datasets do not include any personal information there were no ethical concerns for any persons viewing data. Also of note is this website and effort was done on behalf of a Data Analytics class at UC Berkeley, and is not to be used for any commercial purpose.
 
 We would like to take a moment here to mention that while cleaning the data it proved difficult to match the Netflix information with the IMDB information, due to this logic was used to match the datasets and this can cause some of the data that was matched and presented here to be false. Roughly 3k of the 11.7k records which were matched were done using logic.
 
